@@ -12,7 +12,7 @@
 
 
 <!-- ========== HEADER ========== -->
-<header class="flex flex-wrap md:justify-start md:flex-nowrap z-50 w-full py-7  ">
+<header class="flex flex-wrap md:justify-start md:flex-nowrap z-50 w-full py-7  fixed top-0 bg-white z-99  ">
   <nav class="relative max-w-7xl w-full flex flex-wrap md:grid md:grid-cols-12 basis-full items-center px-4 md:px-6 mx-auto">
     <div class="md:col-span-3">
       <!-- Logo -->

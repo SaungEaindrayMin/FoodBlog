@@ -1,13 +1,6 @@
-@extends('layouts.index')
-
-@section('title')
-    User Register
-@endsection
-
-@section ('content')
 
 
-<div class="max-w-[85rem] px-4 py-10 sm:px-6 lg:px-8 lg:py-14 mx-auto ">
+<div class="max-w-[85rem] px-4 py-10 sm:px-6 lg:py-2 mx-auto ">
   <div class="max-w-xl mx-auto">
     <div class="text-center">
       <h1 class="text-3xl font-bold text-gray-800 sm:text-4xl text-black/70">
@@ -18,7 +11,7 @@
 
   <div class="mt-12 max-w-lg mx-auto">
     <!-- Card -->
-    <div class="flex flex-col border rounded-xl p-4 sm:p-6 lg:p-8 dark:border-neutral-700">
+    <div class="flex flex-col border rounded-xl p-4 sm:p-6 lg:p-4 dark:border-neutral-700">
       <h2 class="mb-8 text-xl font-semibold text-gray-800 dark:text-neutral-900">
         Fill in the form
      
@@ -57,7 +50,7 @@
             <div>
              
               <label for="email" class="block mb-2 text-sm text-gray-700 font-medium text-black/70">Email</label>
-              <input type="text" name="email" id="email" autocomplete="email" class="py-3 px-4 block w-full border-gray-200 rounded-lg text-sm focus:border-blue-500 focus:ring-blue-500 disabled:opacity-50 disabled:pointer-events-none dark:bg-neutral-100 dark:border-neutral-700 dark:text-neutral-400 dark:focus:ring-neutral-600">
+              <input type="text" name="email" id="email"  class="py-3 px-4 block w-full border-gray-200 rounded-lg text-sm focus:border-blue-500 focus:ring-blue-500 disabled:opacity-50 disabled:pointer-events-none dark:bg-neutral-100 dark:border-neutral-700 dark:text-neutral-400 dark:focus:ring-neutral-600">
               @error('email')
             <p class=" text-xs text-red-600 mt-2" id="email-error" >{{$message}}</p>
             @enderror
@@ -74,8 +67,8 @@
 
             <div>
              
-              <label for="password" class="block mb-2 text-sm text-gray-700 font-medium text-black/70">Confirm Password</label>
-              <input type="password" name="password_confirmation" id="password"  class="py-3 px-4 block w-full border-gray-200 rounded-lg text-sm focus:border-blue-500 focus:ring-blue-500 disabled:opacity-50 disabled:pointer-events-none dark:bg-neutral-100 dark:border-neutral-700 dark:text-neutral-400 dark:focus:ring-neutral-600">
+              <label for="password_confirmation" class="block mb-2 text-sm text-gray-700 font-medium text-black/70">Confirm Password</label>
+              <input type="password" name="password_confirmation" id="password_confirmation"  class="py-3 px-4 block w-full border-gray-200 rounded-lg text-sm focus:border-blue-500 focus:ring-blue-500 disabled:opacity-50 disabled:pointer-events-none dark:bg-neutral-100 dark:border-neutral-700 dark:text-neutral-400 dark:focus:ring-neutral-600">
               @error('password_confirmation')
             <p class=" text-xs text-red-600 mt-2" >{{$message}}</p>
             @enderror
@@ -96,5 +89,4 @@
 </div>
 
 
-@endsection
 

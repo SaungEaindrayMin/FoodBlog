@@ -19,3 +19,4 @@ Route::get('/login', function () {
 
 Route::post('/register',[authController::class,'register'])->name('register');
 Route::post('/login',[authController::class,'login'])->name('login');
+Route::get('/dashboard',[authController::class,'dashboard'])->name('dashboard');

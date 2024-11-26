@@ -1,7 +1,7 @@
 {{-- Browse Category  --}}
 
 <!-- Features -->
-<div class="max-w-[85rem] px-4 py-10 sm:px-6 lg:px-8 lg:py-14 mx-auto mt-[10%]">
+<div class="max-w-[85rem] px-4 py-10 sm:px-6 lg:px-8 lg:py-14 mx-auto ">
     <!-- Title -->
     <div class="mx-auto max-w-2xl mb-8 lg:mb-14 text-center">
       <h2 class="text-3xl lg:text-4xl text-yellow-500 font-bold">

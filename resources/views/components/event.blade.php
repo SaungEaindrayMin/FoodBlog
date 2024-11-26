@@ -5,9 +5,9 @@
     <div id="slide1" class="carousel-item relative w-full flex justify-center items-center">
       <div class="card md:card-side glass  shadow-xl w-[80%] relative overflow-hidden ">
         <h1
-        class="py-2 text-center uppercase text-yellow-700 text-md md:text-xl font-semibold bg-gradient-to-r from-yellow-200 via-orange-200 to-yellow-400  md:-rotate-[35deg] -rotate-45 -translate-x-14 rounded-full translate-y-8 md:-translate-x-20 lg:-translate-x-44 lg:translate-y-8 w-1/2 absolute"
+        class="py-2 text-center uppercase text-yellow-700 text-sm md:text-xl font-semibold bg-gradient-to-r from-yellow-200 via-orange-200 to-yellow-400  md:-rotate-[35deg] -rotate-45 -translate-x-[35%] translate-y-8  md:rounded-full  md:-translate-x-20 lg:-translate-x-44 lg:translate-y-8 w-full md:w-1/2 absolute"
       >
-        Comming Soon
+           Comming Soon
       </h1>
         <figure>
         
@@ -35,9 +35,9 @@
     <div id="slide2" class="carousel-item relative w-full flex justify-center items-center">
       <div class="card md:card-side glass  shadow-xl w-[80%] relative overflow-hidden  ">
         <h1
-        class="py-2 text-center uppercase text-yellow-700 text-md md:text-xl font-semibold bg-gradient-to-r from-yellow-200 via-orange-200 to-yellow-400  md:-rotate-[35deg] -rotate-45 -translate-x-14 rounded-full translate-y-8 md:-translate-x-20 lg:-translate-x-44 lg:translate-y-8 w-1/2 absolute"
+        class="py-2 text-center uppercase text-yellow-700 text-sm md:text-xl font-semibold bg-gradient-to-r from-yellow-200 via-orange-200 to-yellow-400  md:-rotate-[35deg] -rotate-45 -translate-x-[35%] translate-y-8  md:rounded-full  md:-translate-x-20 lg:-translate-x-44 lg:translate-y-8 w-full md:w-1/2 absolute"
       >
-        Comming Soon
+           Comming Soon
       </h1>
         <figure>
           <img
@@ -63,9 +63,9 @@
     <div id="slide3" class="carousel-item relative w-full flex justify-center items-center">
       <div class="card md:card-side glass  shadow-xl w-[80%]  relative overflow-hidden  ">
         <h1
-        class="py-2 text-center uppercase text-yellow-700 text-md md:text-xl font-semibold bg-gradient-to-r from-yellow-200 via-orange-200 to-yellow-400  md:-rotate-[35deg] -rotate-45 -translate-x-14 rounded-full translate-y-8 md:-translate-x-20 lg:-translate-x-44 lg:translate-y-8 w-1/2 absolute"
+        class="py-2 text-center uppercase text-yellow-700 text-sm md:text-xl font-semibold bg-gradient-to-r from-yellow-200 via-orange-200 to-yellow-400  md:-rotate-[35deg] -rotate-45 -translate-x-[35%] translate-y-8  md:rounded-full  md:-translate-x-20 lg:-translate-x-44 lg:translate-y-8 w-full md:w-1/2 absolute"
       >
-        Comming Soon
+           Comming Soon
       </h1>
         <figure>
           <img
@@ -91,9 +91,9 @@
     <div id="slide4" class="carousel-item relative w-full flex justify-center items-center">
       <div class="card md:card-side glass  shadow-xl w-[80%] relative overflow-hidden  ">
         <h1
-        class="py-2 text-center uppercase text-yellow-700 text-md md:text-xl font-semibold bg-gradient-to-r from-yellow-200 via-orange-200 to-yellow-400  md:-rotate-[35deg] -rotate-45 -translate-x-14 rounded-full translate-y-8 md:-translate-x-20 lg:-translate-x-44 lg:translate-y-8 w-1/2 absolute"
+        class="py-2 text-center uppercase text-yellow-700 text-sm md:text-xl font-semibold bg-gradient-to-r from-yellow-200 via-orange-200 to-yellow-400  md:-rotate-[35deg] -rotate-45 -translate-x-[35%] translate-y-8  md:rounded-full  md:-translate-x-20 lg:-translate-x-44 lg:translate-y-8 w-full md:w-1/2 absolute"
       >
-        Comming Soon
+           Comming Soon
       </h1>
         <figure>
           <img

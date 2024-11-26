@@ -5,6 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>@yield('title','Default')</title>
     @vite('resources/css/app.css')
+    @vite('resources/js/app.js')
 
     @yield ('theme')
 </head>
@@ -27,17 +28,47 @@
       <button type="button" onclick="Signin.showModal()" class="btn py-2 px-3 inline-flex items-center gap-x-2 text-sm font-medium rounded-xl bg-white border border-gray-400 text-black hover:bg-gray-100 focus:outline-none focus:bg-gray-100 disabled:opacity-50 disabled:pointer-events-none  ">
         Sign in
       </button>
-      <button type="button" onclick="Signup.showModal()" class=" btn py-2 px-3 inline-flex items-center gap-x-2 text-sm font-medium rounded-xl border border-transparent bg-yellow-400 text-black hover:bg-yellow-500 focus:outline-none focus:bg-yellow-500 transition disabled:opacity-50 disabled:pointer-events-none">
+      <button type="button" onclick="Signup.showModal()" class=" btn py-2 px-3 inline-flex items-center gap-x-2 text-sm font-medium rounded-xl border border-transparent bg-yellow-400 text-black hover:bg-yellow-300 focus:outline-none focus:bg-yellow-500 transition disabled:opacity-50 disabled:pointer-events-none">
         Sign up
       </button>
 
-      <div class="md:hidden">
-        <button type="button" class="hs-collapse-toggle size-[38px] flex justify-center items-center text-sm font-semibold rounded-xl border border-gray-200 text-black hover:bg-gray-100 focus:outline-none focus:bg-gray-100 disabled:opacity-50 disabled:pointer-events-none dark:text-white dark:border-neutral-700 dark:hover:bg-neutral-700 dark:focus:bg-neutral-700" id="hs-navbar-hcail-collapse" aria-expanded="false" aria-controls="hs-navbar-hcail" aria-label="Toggle navigation" data-hs-collapse="#hs-navbar-hcail">
-          <svg class="hs-collapse-open:hidden shrink-0 size-4" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="3" x2="21" y1="6" y2="6"/><line x1="3" x2="21" y1="12" y2="12"/><line x1="3" x2="21" y1="18" y2="18"/></svg>
-          <svg class="hs-collapse-open:block hidden shrink-0 size-4" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M18 6 6 18"/><path d="m6 6 12 12"/></svg>
-        </button>
-      </div>
+      {{-- hambuger menu  --}}
+      <div class="dropdown dropdown-end md:hidden">
+        <div tabindex="0" role="button" class="btn btn-ghost btn-circle avatar hover:bg-yellow-400">
+          <div class="flex-none">
+              <svg
+                xmlns="http://www.w3.org/2000/svg"
+                fill="none"
+                viewBox="0 0 24 24"
+                class="inline-block h-5 w-5 stroke-current">
+                <path
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                  stroke-width="2"
+                  d="M4 6h16M4 12h16M4 18h16"></path>
+              </svg>
+          </div>
+        </div>
+        <ul
+          tabindex="0"
+          class="text-center  menu-sm grid justify-center items-center gap-3 dropdown-content bg-base-100 rounded-box z-[1] mt-3 w-52 p-2 shadow">
+          <li class="hover:bg-yellow-400 rounded-lg"><a>Work</a></li>
+          <li class="hover:bg-yellow-400 rounded-lg"><a>Service</a></li>
+          <li class="hover:bg-yellow-400 rounded-lg"><a>About</a></li>
+          <li class="hover:bg-yellow-400 rounded-lg"><a>Careers</a></li>
+          <li class="hover:bg-yellow-400 rounded-lg"><a>Blog</a></li>
+
+
+      </ul>
     </div>
+  </div>
+
+      {{-- hambuger menu  --}}
+  </div>
+
+
+      </div>
+    
     <!-- End Button Group -->
 
     <!-- Collapse -->
@@ -62,6 +93,7 @@
     </div>
     <!-- End Collapse -->
   </nav>
+
 </header>
 <!-- ========== END HEADER ========== -->
  
@@ -73,7 +105,7 @@
     
 
 
-<script src="/node_modules/preline/dist/preline.js"></script>
-@vite('resources/js/app.js')
+
+
 </body>
 </html>

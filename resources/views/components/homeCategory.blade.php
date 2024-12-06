@@ -17,9 +17,9 @@
     <div class="mx-auto max-w-3xl grid grid-cols-12 gap-6 lg:gap-8">
       <!-- Icon Block -->
       <div class="md:col-span-4 col-span-6 text-center">
-        <img src="/noodle.png" alt="Noodle image" class="mx-auto h-auto w-7 md:w-14 text-gray-800 hover:scale-105 transition-transform duration-300 ease-in-out">
+        <img src="/noodle.png" alt="Noodle image" class="mx-auto h-auto w-7 md:w-14 text-gray-600 hover:scale-105 transition-transform duration-300 ease-in-out">
         <div class="sm:mt-6">
-          <h3 class="text-lg font-semibold text-gray-800">
+          <h3 class="text-md  md:text-lg font-semibold text-gray-600">
             Asian Cuisine
           </h3>
         </div>
@@ -28,9 +28,9 @@
   
       <!-- Icon Block -->
       <div class="md:col-span-4   col-span-6 text-center">
-        <img src="/spaghetti.png" alt="spaghetti image" class="mx-auto h-auto w-7 md:w-14 text-gray-800 hover:scale-105 transition-transform duration-300 ease-in-out">
+        <img src="/spaghetti.png" alt="spaghetti image" class="mx-auto h-auto w-7 md:w-14 text-gray-600 hover:scale-105 transition-transform duration-300 ease-in-out">
         <div class=" sm:mt-6">
-          <h3 class="text-lg font-semibold text-gray-800">
+          <h3 class="text-md md:text-lg font-semibold text-gray-600">
             European Cuisine
           </h3>
         </div>
@@ -39,9 +39,9 @@
   
       <!-- Icon Block -->
       <div class="md:col-span-4 col-span-6 text-center">
-        <img src="/bbq.png" alt="bbq image" class="mx-auto h-auto w-7 md:w-14 text-gray-800 hover:scale-105 transition-transform duration-300 ease-in-out">
+        <img src="/bbq.png" alt="bbq image" class="mx-auto h-auto w-7 md:w-14 text-gray-600 hover:scale-105 transition-transform duration-300 ease-in-out">
         <div class=" sm:mt-6">
-          <h3 class="text-lg font-semibold text-gray-800">
+          <h3 class="text-md md:text-lg font-semibold text-gray-600">
             African Cuisine
           </h3>
         </div>
@@ -51,9 +51,9 @@
           
       <!-- Icon Block -->
       <div class="md:col-span-4  col-span-6 text-center">
-        <img src="/burger.png" alt="burger image" class="mx-auto h-auto w-7 md:w-14 text-gray-800 hover:scale-105 transition-transform duration-300 ease-in-out">
+        <img src="/burger.png" alt="burger image" class="mx-auto h-auto w-7 md:w-14 text-gray-600 hover:scale-105 transition-transform duration-300 ease-in-out">
             <div class=" sm:mt-6">
-              <h3 class="text-lg font-semibold text-gray-800">
+              <h3 class="text-md md:text-lg font-semibold text-gray-600">
                 American Cuisine
               </h3>
             </div>
@@ -63,9 +63,9 @@
   
         <!-- Icon Block -->
       <div class="md:col-span-4 col-span-6 text-center">
-        <img src="/massaman-curry.png" alt="massaman-curry image" class="mx-auto h-auto w-7 md:w-14 text-gray-800 hover:scale-105 transition-transform duration-300 ease-in-out">
+        <img src="/massaman-curry.png" alt="massaman-curry image" class="mx-auto h-auto w-7 md:w-14 text-gray-600 hover:scale-105 transition-transform duration-300 ease-in-out">
         <div class=" sm:mt-6">
-          <h3 class="text-lg font-semibold text-gray-800">
+          <h3 class="text-md md:text-lg font-semibold text-gray-600">
             Middle Eastern Cuisine
           </h3>
         </div>
@@ -74,9 +74,9 @@
   
        <!-- Icon Block -->
        <div class="md:col-span-4  col-span-6 text-center">
-        <img src="/fish.png" alt="fish image" class="mx-auto h-auto w-7 md:w-14 text-gray-800 hover:scale-105 transition-transform duration-300 ease-in-out">
+        <img src="/fish.png" alt="fish image" class="mx-auto h-auto w-7 md:w-14 text-gray-600 hover:scale-105 transition-transform duration-300 ease-in-out">
             <div class=" sm:mt-6">
-              <h3 class="text-lg font-semibold text-gray-800">
+              <h3 class="text-md md:text-lg font-semibold text-gray-600">
                 Oceanian Cuisine
               </h3>
             </div>

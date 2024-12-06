@@ -1,36 +1,36 @@
 
 
-<div class="max-w-[85rem] px-4 py-10 sm:px-6 lg:py-2 mx-auto ">
+<div class="max-w-[85rem]    mx-auto ">
   <div class="max-w-xl mx-auto">
     <div class="text-center">
-      <h1 class="text-3xl font-bold sm:text-4xl text-black/70">
+      <h1 class="text-3xl font-bold sm:text-4xl text-yellow-500">
         Register Here!
       </h1>
     </div>
   </div>
 
-  <div class="mt-12 max-w-lg mx-auto">
+  <div class="mt-3 max-w-xl mx-auto flex flex-col items-center justify-center bg-white border-2 border-[#264143] rounded-2xl shadow-[3px_4px_0px_1px_#E99F4C] p-6">
     <!-- Card -->
     <div class="flex flex-col border rounded-xl p-4 sm:p-6 lg:p-4 dark:border-neutral-700">
-      <h2 class="mb-8 text-xl font-semibold text-gray-800 dark:text-neutral-900">
+      <h2 class="mb-3 text-xl font-semibold text-gray-800 dark:text-neutral-900">
         Fill in the form
      
      </h2>
 
       <form method="POST" action="{{route('register')}}">
-        <div class="grid gap-4 lg:gap-6">
+        <div class="grid gap-4 ">
 
         @csrf
 
 
           <!-- Grid -->
            
-          <div class="grid grid-cols-1 sm:grid-cols-2 gap-4 lg:gap-6">
-            <div>
+          <div class="grid grid-cols-1 sm:grid-cols-2 gap-4 lg:gap-4 ">
+            <div class="">
               
               
               <label for="firstname" class="block mb-2 text-sm text-gray-700 font-medium text-black/70">First Name</label>
-              <input type="text" name="firstname" id="firstname" class="py-3 px-4 block w-full border-gray-200 rounded-lg text-sm focus:border-blue-500 focus:ring-blue-500 disabled:opacity-50 disabled:pointer-events-none dark:bg-neutral-100 dark:border-neutral-700 dark:text-neutral-400 dark:focus:ring-neutral-600">
+              <input type="text" name="firstname" id="firstname" class="outline-none border-2 border-[#264143] py-3 px-4 block w-full shadow-[3px_4px_0px_1px_#E99F4C]  p-3 rounded-md text-sm focus:translate-y-1 focus:shadow-[1px_2px_0px_0px_#E99F4C]">
               @error('firstname')
             <p class=" text-xs text-red-600 mt-2" id="email-error">{{$message}}</p>
             @enderror
@@ -38,7 +38,7 @@
 
             <div>
               <label for="lastname" class="block mb-2 text-sm text-gray-700 font-medium text-black/70">Last Name</label>
-              <input type="text" name="lastname" id="lastname" class="py-3 px-4 block w-full border-gray-200 rounded-lg text-sm focus:border-blue-500 focus:ring-blue-500 disabled:opacity-50 disabled:pointer-events-none dark:bg-neutral-100 dark:border-neutral-700 dark:text-neutral-400 dark:focus:ring-neutral-600">
+              <input type="text" name="lastname" id="lastname" class="outline-none border-2 border-[#264143] py-3 px-4 block w-full shadow-[3px_4px_0px_1px_#E99F4C] p-3 rounded-md text-sm focus:translate-y-1 focus:shadow-[1px_2px_0px_0px_#E99F4C]">
               @error('lastname')
             <p class=" text-xs text-red-600 mt-2" >{{$message}}</p>
             @enderror
@@ -50,7 +50,7 @@
             <div>
              
               <label for="email" class="block mb-2 text-sm text-gray-700 font-medium text-black/70">Email</label>
-              <input type="text" name="email" id="email"  class="py-3 px-4 block w-full border-gray-200 rounded-lg text-sm focus:border-blue-500 focus:ring-blue-500 disabled:opacity-50 disabled:pointer-events-none dark:bg-neutral-100 dark:border-neutral-700 dark:text-neutral-400 dark:focus:ring-neutral-600">
+              <input type="text" name="email" id="email"  class="outline-none border-2 border-[#264143] py-3 px-4 block w-full shadow-[3px_4px_0px_1px_#E99F4C] p-3 rounded-md text-sm focus:translate-y-1 focus:shadow-[1px_2px_0px_0px_#E99F4C]">
               @error('email')
             <p class=" text-xs text-red-600 mt-2" id="email-error" >{{$message}}</p>
             @enderror
@@ -59,7 +59,7 @@
             <div>
              
               <label for="password" class="block mb-2 text-sm text-gray-700 font-medium text-black/70">Password</label>
-              <input type="password" name="password" id="password"  class="py-3 px-4 block w-full border-gray-200 rounded-lg text-sm focus:border-blue-500 focus:ring-blue-500 disabled:opacity-50 disabled:pointer-events-none dark:bg-neutral-100 dark:border-neutral-700 dark:text-neutral-400 dark:focus:ring-neutral-600">
+              <input type="password" name="password" id="password"  class="outline-none border-2 border-[#264143] py-3 px-4 block w-full shadow-[3px_4px_0px_1px_#E99F4C] p-3 rounded-md text-sm focus:translate-y-1 focus:shadow-[1px_2px_0px_0px_#E99F4C]">
               @error('password')
             <p class=" text-xs text-red-600 mt-2" >{{$message}}</p>
             @enderror
@@ -68,17 +68,21 @@
             <div>
              
               <label for="password_confirmation" class="block mb-2 text-sm text-gray-700 font-medium text-black/70">Confirm Password</label>
-              <input type="password" name="password_confirmation" id="password_confirmation"  class="py-3 px-4 block w-full border-gray-200 rounded-lg text-sm focus:border-blue-500 focus:ring-blue-500 disabled:opacity-50 disabled:pointer-events-none dark:bg-neutral-100 dark:border-neutral-700 dark:text-neutral-400 dark:focus:ring-neutral-600">
+              <input type="password" name="password_confirmation" id="password_confirmation"  class="outline-none border-2 border-[#264143] py-3 px-4 block w-full shadow-[3px_4px_0px_1px_#E99F4C] p-3 rounded-md text-sm focus:translate-y-1 focus:shadow-[1px_2px_0px_0px_#E99F4C]">
               @error('password_confirmation')
             <p class=" text-xs text-red-600 mt-2" >{{$message}}</p>
             @enderror
             </div>
 
 
-        <div class="mt-6 grid">
-          <button type="submit" name="save" class="w-full py-3 px-4 inline-flex justify-center items-center gap-x-2 text-sm font-medium rounded-lg border border-transparent bg-blue-600 text-white hover:bg-blue-700 focus:outline-none focus:bg-blue-700 disabled:opacity-50 disabled:pointer-events-none">Register</button>
-        </div>
 
+        <div class="text-center mt-5">
+          <div class="mt-6 grid">
+            <button type="submit" name="save" class="bg-yellow-400 mx-auto shadow-[3px_3px_0px_0px_#E99F4C] text-black font-extrabold w-72 p-4 rounded-xl hover:opacity-90">Register</button>
+          </div>
+  
+          <p class="mt-4">Have an Account? <a class="font-extrabold text-[#264143] hover:underline" href="">Login Here!</a></p>
+      </div>
 
       </form>
     </div>
@@ -87,6 +91,7 @@
 
   
 </div>
+
 
 
 

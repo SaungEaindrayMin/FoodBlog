@@ -8,6 +8,14 @@
     @vite('resources/js/app.js')
 
     @yield ('theme')
+    <style>
+      .parallax {
+        background-attachment: fixed;
+        background-size: cover;
+        background-repeat: no-repeat;
+        background-position: center;
+      }
+    </style>
 </head>
 <body>
 
@@ -18,7 +26,7 @@
     <div class="md:col-span-3">
       <!-- Logo -->
       <a class="flex-none rounded-xl text-xl inline-block font-semibold focus:outline-none focus:opacity-80" href="../templates/creative-agency/index.html" aria-label="Preline">
-        <img src="/magic-of-flavor-high-resolution-logo-transparent.png"  alt="" class="w-10 h-10">
+        <img src="/magic-of-flavor-high-resolution-logo-transparent-3.png"  alt="" class="w-14 h-14">
       </a>
       <!-- End Logo -->
     </div>

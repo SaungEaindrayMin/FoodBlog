@@ -6,7 +6,7 @@ Home Page
 
 @section('content')
 
-<section class="max-w-[85rem] mx-auto px-4 sm:px-6 lg:px-8 mt-[10%]">
+<section class="max-w-[85rem] mx-auto px-4 sm:px-6 lg:px-8 mt-[20%] lg:mt-[10%]">
 @include('components.hero')
 @include('components.event')
 @include('components.homeReceipes')

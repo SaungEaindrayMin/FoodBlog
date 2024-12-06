@@ -5,7 +5,7 @@ use App\Http\Controllers\authController;
 
 
 Route::get('/', function () {
-    return view('welcome');
+    return view ('welcome');
 });
 
 Route::get('/register', function () {
@@ -17,10 +17,14 @@ Route::get('/login', function () {
 });
 
 Route::get('/contact', function () {
-    return view('components.contactUs');
+    return view('layouts.contactUs');
 });
 Route::get('/dashboard', function () {
     return view('layouts.dashboard');
+});
+
+Route::get('/about', function () {
+    return view('layouts.AboutUs');
 });
 
 

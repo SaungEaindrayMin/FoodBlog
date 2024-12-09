@@ -7,8 +7,10 @@
 @section('content')
   @include('components.aboutUsHeader')
   @include('components.aboutUsBody')
-  @include('components.Testimonial')
+  @include('components.aboutUsLatestReceipes')
+  @include('components.teamMember')
   @include('components.footer')
   @include('components.modal')
+
 
 @endsection

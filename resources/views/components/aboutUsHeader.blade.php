@@ -1,5 +1,5 @@
 
-  <section class=" max-w-[85rem] mx-auto px-4 sm:px-6 lg:px-8 mt-[10%]">
+  <section class=" max-w-[85rem] mx-auto px-4 sm:px-6 lg:px-8 mt-[20%] md:mt-[10%]">
     <div
       class="mx-auto w-full  relative flex flex-col items-center justify-center text-center overflow-visible"
     >

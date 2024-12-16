@@ -3,7 +3,7 @@
     <div
       class="mx-auto w-full  relative flex flex-col items-center justify-center text-center overflow-visible"
     >
-      <h3 class="text-5xl font-bold py-3">About Magic of Flavour</h3>
+      <h3 class="text-3xl lg:text-5xl font-bold py-3">About Magic of Flavour</h3>
       <div class="w-full relative flex flex-col items-center justify-center">
         <div
           class="absolute inset-x-auto top-0 bg-gradient-to-r from-transparent via-orange-300 to-transparent h-[2px] w-full blur-sm"
@@ -35,14 +35,5 @@
      
   </section >
 
-  <!-- Image Grid Section -->
-  {{-- <section class="container mx-auto py-12 px-4 mt-[5%]">
-    <div class="grid grid-cols-2 md:grid-cols-4 gap-6">
-      <img src="https://via.placeholder.com/300" alt="Collaboration" class="rounded-lg shadow-lg">
-      <img src="https://via.placeholder.com/300" alt="Brainstorming" class="rounded-lg shadow-lg">
-      <img src="https://via.placeholder.com/300" alt="Planning" class="rounded-lg shadow-lg">
-      <img src="https://via.placeholder.com/300" alt="Discussion" class="rounded-lg shadow-lg">
-    </div>
-  </section> --}}
 
 

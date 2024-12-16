@@ -9,6 +9,7 @@
   @include('components.aboutUsBody')
   @include('components.aboutUsLatestReceipes')
   @include('components.teamMember')
+  @include('components.Testimonial')
   @include('components.footer')
   @include('components.modal')
 

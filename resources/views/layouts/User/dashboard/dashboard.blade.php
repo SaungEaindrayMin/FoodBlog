@@ -30,7 +30,7 @@
             <div class="absolute inset-y-0 start-0 flex items-center pointer-events-none z-20 ps-3.5">
               <svg class="shrink-0 size-4 text-black " xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="11" cy="11" r="8"/><path d="m21 21-4.3-4.3"/></svg>
             </div>
-            <input type="text" class="py-2 ps-10 pe-16 block w-full bg-yellow-300 border-gray-200 rounded-lg text-sm focus:outline-none focus:border-blue-500 focus:ring-blue-500 disabled:opacity-50 disabled:pointer-events-none  text-neutral-400 placeholder:text-neutral-600 " placeholder="Search">
+            <input type="text" class="py-4 ps-10 pe-16 block w-full bg-yellow-200 border-gray-200 rounded-lg text-sm focus:outline-none focus:border-blue-500 focus:ring-blue-500 disabled:opacity-50 disabled:pointer-events-none  text-black placeholder:text-neutral-600 " placeholder="Search">
             <div class="md:hidden absolute inset-y-0 end-0 flex items-center pointer-events-none z-20 pe-1">
               <button type="button" class="inline-flex shrink-0 justify-center items-center size-6 rounded-full text-black hover:text-blue-600 focus:outline-none focus:text-blue-600 " aria-label="Close">
                 <span class="sr-only">Close</span>
@@ -167,14 +167,14 @@
 
             <li><a class="w-full flex items-center gap-x-3.5 py-2 px-2.5 text-sm text-gray-800 rounded-lg hover:bg-yellow-200  " href="#">
               <svg class="shrink-0 size-4" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" ><path d="M16 21v-2a4 4 0 0 0-4-4H6a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M22 21v-2a4 4 0 0 0-3-3.87"/><path d="M16 3.13a4 4 0 0 1 0 7.75"/></svg>
-                Users
+                Profile
   
             </a></li>
   
             
             <li><a class="w-full flex items-center gap-x-3.5 py-2 px-2.5 text-sm text-gray-800 rounded-lg hover:bg-yellow-200  " href="#">
               <svg class="shrink-0 mt-0.5 size-4" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="18" cy="15" r="3"/><circle cx="9" cy="7" r="4"/><path d="M10 15H6a4 4 0 0 0-4 4v2"/><path d="m21.7 16.4-.9-.3"/><path d="m15.2 13.9-.9-.3"/><path d="m16.6 18.7.3-.9"/><path d="m19.1 12.2.3-.9"/><path d="m19.6 18.7-.4-1"/><path d="m16.8 12.3-.4-1"/><path d="m14.3 16.6 1-.4"/><path d="m20.7 13.8 1-.4"/></svg>
-                Account
+                Newsfeed
   
             </a></li>
 
@@ -228,10 +228,8 @@
 <div>
   @yield('content')
 </div>
-    
 
-
-
-
+<script src="./node_modules/lodash/lodash.min.js"></script>
+<script src="./node_modules/dropzone/dist/dropzone-min.js"></script>
 </body>
 </html>

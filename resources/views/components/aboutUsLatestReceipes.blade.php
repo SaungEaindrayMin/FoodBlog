@@ -1,5 +1,5 @@
 <section class="max-w-[85rem] px-4 py-10 sm:px-6 lg:px-8 lg:py-14 mx-auto overflow-hidden">
-  <h1 class="text-3xl sm:text-4xl md:text-5xl text-center mb-6 sm:mb-8 md:mb-10 font-bold">Latest Recipes From Our Team</h1>
+  <h1 class="text-3xl lg:text-5xl text-center mb-6 sm:mb-8 md:mb-10 font-bold">Latest Recipes From Our Team</h1>
   <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-[50%_50%] gap-2 mx-auto group relative">
     <!-- Card 1 -->
     <div

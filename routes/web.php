@@ -19,12 +19,20 @@ Route::get('/login', function () {
 Route::get('/contact', function () {
     return view('layouts.contactUs');
 });
-Route::get('/dashboard', function () {
-    return view('layouts.dashboard');
+Route::get('/User/dashboard', function () {
+    return view('layouts.User.dashboard.dashboard');
 });
 
 Route::get('/about', function () {
     return view('layouts.AboutUs');
+});
+
+Route::get('/User/dashboard/profile', function () {
+    return view('layouts.User.dashboard.Profile.profile');
+});
+
+Route::get('/User/dashboard/newsfeed', function () {
+    return view('layouts.User.dashboard.newsfeed');
 });
 
 

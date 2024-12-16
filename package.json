@@ -17,6 +17,9 @@
     },
     "dependencies": {
         "@preline/carousel": "^2.5.0",
+        "@preline/file-upload": "^2.6.0",
+        "dropzone": "^6.0.0-beta.2",
+        "lodash": "^4.17.21",
         "preline": "^2.5.1"
     }
 }

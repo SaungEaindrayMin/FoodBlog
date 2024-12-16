@@ -1,6 +1,6 @@
 <section class="container mx-auto py-12 px-4 grid lg:flex  justify-between items-center gap-6 mt-[5%]">
   <!-- Card 1 -->
-  <div class="card w-full sm:w-[48%] lg:w-[30%] xl:w-[25%] h-auto p-5 text-black bg-transparent border border-yellow-400 flex flex-col cursor-pointer origin-center transition-all duration-500 ease-[cubic-bezier(0.175, 0.885, 0.32, 1.275)] hover:rounded-lg hover:bg-yellow-400 hover:scale-[0.95] hover:rotate-2 hover:shadow-[0px_3px_20px_2px_rgba(255,255,0,0.4)]">
+  <div class="card w-full  lg:w-2/6  h-auto p-5 text-black bg-transparent border border-yellow-400 flex flex-col cursor-pointer origin-center transition-all duration-500 ease-[cubic-bezier(0.175, 0.885, 0.32, 1.275)] hover:rounded-lg hover:bg-yellow-400 hover:scale-[0.95] hover:rotate-2 hover:shadow-[0px_3px_20px_2px_rgba(255,255,0,0.4)]">
     <p class="header mb-4 text-xl font-bold">About Us</p>
     <div class="main-content flex-1">
       <p class="heading text-xl lg:text-2xl font-semibold tracking-wide">Welcome !</p>
@@ -12,7 +12,7 @@
   </div>
 
   <!-- Middle Content -->
-  <div class="card w-full xl:w-[50%] h-auto p-6 flex flex-col justify-between text-black bg-transparent border border-yellow-400">
+  <div class="card w-full lg:w-4/6 h-auto p-6 flex flex-col justify-between text-black bg-transparent border border-yellow-400">
     <div class="text-center mx-auto mb-4">
       <div class="flex justify-center items-center h-14 p-2 text-gray-500 font-medium text-2xl sm:text-3xl rounded-md relative w-full mx-auto overflow-hidden">
         <p>Let's</p>
@@ -65,7 +65,7 @@
   </div>
 
   <!-- Card 2 -->
-  <div class="card w-full sm:w-[48%] lg:w-[30%] xl:w-[25%] h-auto p-5 text-black bg-transparent border border-yellow-400 flex flex-col cursor-pointer origin-center transition-all duration-500 ease-[cubic-bezier(0.175, 0.885, 0.32, 1.275)] hover:rounded-lg hover:bg-yellow-400 hover:scale-[0.95] hover:rotate-2 hover:shadow-[0px_3px_20px_2px_rgba(255,255,0,0.4)]">
+  <div class="card w-full   lg:w-2/6 h-auto p-5 text-black bg-transparent border border-yellow-400 flex flex-col cursor-pointer origin-center transition-all duration-500 ease-[cubic-bezier(0.175, 0.885, 0.32, 1.275)] hover:rounded-lg hover:bg-yellow-400 hover:scale-[0.95] hover:rotate-2 hover:shadow-[0px_3px_20px_2px_rgba(255,255,0,0.4)]">
     <p class="header mb-4 text-xl font-bold">Our Mission</p>
     <div class="main-content flex-1">
       <p class="heading text-xl lg:text-2xl font-semibold tracking-wide">To Inspire & Empower</p>

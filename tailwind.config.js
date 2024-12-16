@@ -32,6 +32,22 @@ export default {
                     '85%': { transform: 'translateY(-402%)' },
                     '100%': { transform: 'translateY(-400%)' },
                   },
+                  flicker: {
+                    '0%, 10%, 30%, 100%': {
+                      border: '2px solid rgb(1, 235, 252)',
+                      boxShadow: '0 0 100px rgb(1, 235, 252), inset 0 0 10px rgb(255,223,0), 0 0 5px rgb(255,223,0)',
+                    },
+                    '5%, 25%': {
+                      border: 'none',
+                      boxShadow: 'none',
+                    },
+                  },
+                  iconflicker: {
+                    '0%, 10%, 30%, 100%': { opacity: '1' },
+                    '5%, 25%': { opacity: '0.2' },
+                  },
+                
+              
   
               },
               animation: {
@@ -39,6 +55,10 @@ export default {
               },
               animation: {
                 'spin-words': 'spin-words 4s infinite',
+              },
+              animation: {
+                flicker: 'flicker 2s linear infinite',
+                iconflicker: 'iconflicker 2s linear infinite',
               },
               
             

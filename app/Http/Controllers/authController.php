@@ -44,6 +44,6 @@ class authController extends Controller
 
     public function dashboard()
     {
-        return view('layouts.dashboard');
+        return view('layouts.User.dashboard.dashboard');
     }
 }

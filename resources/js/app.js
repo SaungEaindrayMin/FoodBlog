@@ -36,6 +36,22 @@ videoInput.addEventListener('change', function(event) {
   }
 });
 
+// reaction 
+const heartButton = document.getElementById("heartButton");
+
+heartButton.addEventListener("click", () => {
+  heartButton.classList.add("scale-125");
+  setTimeout(() => heartButton.classList.remove("scale-125"), 150);
+
+  if (heartButton.classList.contains("text-gray-200")) {
+    heartButton.classList.remove("text-gray-200");
+    heartButton.classList.add("text-red-500");
+  } else {
+    heartButton.classList.remove("text-red-500");
+    heartButton.classList.add("text-gray-200");
+  }
+});
+
 
 
 

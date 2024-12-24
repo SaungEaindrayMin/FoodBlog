@@ -32,8 +32,13 @@ Route::get('/User/dashboard/profile', function () {
 });
 
 Route::get('/User/dashboard/newsfeed', function () {
-    return view('layouts.User.dashboard.newsfeed');
+    return view('layouts.User.dashboard.Newsfeed.newsfeed');
 });
+
+Route::get('/User/dashboard/details', function () {
+    return view('layouts.User.dashboard.Details.details');
+});
+
 
 
 Route::post('/register',[authController::class,'register'])->name('register');

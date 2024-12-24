@@ -11,7 +11,7 @@
 <body>
 
   {{-- start nav section  --}}
-<nav class="bg-[#FFFFF0] border-b border-slate-300 sticky  top-0 z-10 w-full">
+<nav class="bg-[#FFFFF0] border-b border-slate-300 fixed top-0 z-10 w-full">
   <div class="flex justify-between items-center py-4 px-6">
     <div class="nav-left flex items-center gap-4">
       <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="size-6">
@@ -41,24 +41,25 @@
 </nav>
 
 
-<aside class="h-screen grid grid-cols-4 gap-4 ">
-  <div class="fixed  left-0   px-4  h-screen bg-[#FFFFF0]  flex flex-col justify-evenly gap-10 border-r border-slate-300 ">
+<aside class="h-screen grid md:grid-cols-12 ">
 
-  <div>
-    <a href="" class="flex gap-3 items-center p-2 transition duration-200 hover:bg-yellow-300 active:scale-95  rounded-full">
-      <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="size-7">
-        <path stroke-linecap="round" stroke-linejoin="round" d="M17.982 18.725A7.488 7.488 0 0 0 12 15.75a7.488 7.488 0 0 0-5.982 2.975m11.963 0a9 9 0 1 0-11.963 0m11.963 0A8.966 8.966 0 0 1 12 21a8.966 8.966 0 0 1-5.982-2.275M15 9.75a3 3 0 1 1-6 0 3 3 0 0 1 6 0Z" />
-      </svg>      
-      <span class="hidden">Profile</span>
-    </a>
-  </div>
-  
-  <div>
-    <a href="" class="flex gap-3 items-center p-2 transition duration-200 hover:bg-yellow-300 active:scale-95  rounded-full">
-      <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="size-7">
-        <path stroke-linecap="round" stroke-linejoin="round" d="M12 7.5h1.5m-1.5 3h1.5m-7.5 3h7.5m-7.5 3h7.5m3-9h3.375c.621 0 1.125.504 1.125 1.125V18a2.25 2.25 0 0 1-2.25 2.25M16.5 7.5V18a2.25 2.25 0 0 0 2.25 2.25M16.5 7.5V4.875c0-.621-.504-1.125-1.125-1.125H4.125C3.504 3.75 3 4.254 3 4.875V18a2.25 2.25 0 0 0 2.25 2.25h13.5M6 7.5h3v3H6v-3Z" />
-      </svg>           
-      <span class="hidden">Newsfeed</span>
+  <div class=" relative hidden md:block col-start-1  col-end-2">
+  <div class="fixed left-0 px-8 bg-[#FFFFF0]   h-screen  flex flex-col justify-evenly gap-10 border-r border-slate-300 ">
+    {{-- Sidebar Menu --}}
+    <div>
+      <a href="#" class="flex gap-3 items-center p-2 transition duration-200 hover:bg-yellow-300 active:scale-95 rounded-full">
+        <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="size-7">
+          <path stroke-linecap="round" stroke-linejoin="round" d="M17.982 18.725A7.488 7.488 0 0 0 12 15.75a7.488 7.488 0 0 0-5.982 2.975m11.963 0a9 9 0 1 0-11.963 0m11.963 0A8.966 8.966 0 0 1 12 21a8.966 8.966 0 0 1-5.982-2.275M15 9.75a3 3 0 1 1-6 0 3 3 0 0 1 6 0Z" />
+        </svg>
+        <span class="hidden">Profile</span>
+      </a>
+    </div>
+    <div>
+      <a href="#" class="flex gap-3 items-center p-2 transition duration-200 hover:bg-yellow-300 active:scale-95 rounded-full">
+        <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="size-7">
+          <path stroke-linecap="round" stroke-linejoin="round" d="M12 7.5h1.5m-1.5 3h1.5m-7.5 3h7.5m-7.5 3h7.5m3-9h3.375c.621 0 1.125.504 1.125 1.125V18a2.25 2.25 0 0 1-2.25 2.25M16.5 7.5V18a2.25 2.25 0 0 0 2.25 2.25M16.5 7.5V4.875c0-.621-.504-1.125-1.125-1.125H4.125C3.504 3.75 3 4.254 3 4.875V18a2.25 2.25 0 0 0 2.25 2.25h13.5M6 7.5h3v3H6v-3Z" />
+        </svg>
+        <span class="hidden">Newsfeed</span>
     </a>
   </div>
 
@@ -80,28 +81,30 @@
     </a>
   </div>
 </div>
+</div>
 
 
 {{-- main content  --}}
-<div class="col-span-3 border-r border-slate-300">
+<div class="col-start-3 col-span-7 mt-[10%]">
   @yield('content')
 </div>
 {{-- main content  --}}
 
 {{-- right side bar  --}}
-<div class="">
-<div class="fixed top-14 p-8 flex flex-col justify-between  h-[95%] ">
+<div class=" relative hidden md:block col-start-11 col-end-13">
+<div class="fixed top-14 p-8 flex flex-col justify-between border-l border-slate-300  h-[95%] ">
   {{-- for profile --}}
-  <div class="bg-[#FFFFF0] p-4 rounded-lg shadow-lg">
+  <div class="bg-[#FFFFF0]  rounded-lg shadow-lg">
   <figure>
-    <img src="https://plus.unsplash.com/premium_photo-1689977807477-a579eda91fa2?w=900&auto=format&fit=crop&q=60&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8OXx8cHJvZmlsZXxlbnwwfHwwfHx8MA%3D%3D" alt="profile picture"
-    class="rounded-lg w-full h-auto mx-auto object-cover object-center">
+    <img 
+    src="https://images.unsplash.com/photo-1568602471122-7832951cc4c5?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=facearea&facepad=2&w=320&h=320&q=80" alt="Avatar"
+    class=" w-full h-auto mx-auto object-cover">
   </figure>
 
-  <div class="grid gap-3 mt-4">
-    <h1 class="text-lg font-semibold ">Name - <span class="font-normal text-slate-600 ">Tom</span></h1>
-    <p  class="text-lg font-semibold ">Email - <span  class="font-normal text-slate-600 ">tom@gmail.com</span></p>
-    <a href="" class="p-2 border border-yellow-400 text-center font-semibold text-lg shadow-lg bg-yellow-300 rounded-lg">Update Profile</a>
+  <div class="grid gap-3 mt-4 p-4">
+    <h1 class="text-sm font-semibold ">Name - <span class="font-normal text-xs text-slate-600 ">Tom</span></h1>
+    <p  class="text-sm font-semibold ">Email - <span  class="font-normal text-xs text-slate-600 ">tom@gmail.com</span></p>
+    <a href="" class="btn btn-sm bg-yellow-300 w-full hover:bg-yellow-200 border-0">Update Profile</a>
   </div>
 </div>
 
@@ -109,11 +112,11 @@
 {{-- for profile  --}}
 
 {{-- for switch account and create new account  --}}
-{{-- <div >
-    <a href="" class="p-2 font-semibold flex text-xl bg-red-600 text-white rounded-lg justify-center shadow-md">
+<div >
+    <a href="" class="btn btn-sm w-full text-white bg-red-600 hover:bg-red-500 border-0">
       Log Out
     </a>
-</div> --}}
+</div>
 {{-- for switch account and create new account  --}}
 
 </div>

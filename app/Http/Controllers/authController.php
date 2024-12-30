@@ -36,14 +36,9 @@ class authController extends Controller
 
         if ($user && Hash::check($request->password, $user->password)) {
             $request->session()->put('loginId', $user->id);
-            return redirect('dashboard');
+            return redirect('User/dashboard/profile');
         }
 
         return back()->with('fail', 'Invalid credentials'); 
-    }
-
-    public function dashboard()
-    {
-        return view('layouts.User.dashboard.dashboard');
     }
 }

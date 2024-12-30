@@ -126,6 +126,8 @@
 </aside>
 {{-- end nav section  --}}
 
+
 <script src="./node_modules/lodash/lodash.min.js"></script>
+<script src="./node_modules/dropzone/dist/dropzone-min.js"></script>
 </body>
 </html>

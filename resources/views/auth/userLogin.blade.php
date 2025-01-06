@@ -21,6 +21,8 @@
       <form action="{{route('login')}}" method="POST" class="flex flex-col items-center justify-center bg-white border-2 border-[#264143] rounded-2xl shadow-[3px_4px_0px_1px_#E99F4C] py-6">
         @csrf
 
+        <h1>hello</h1>
+
         @if (session('fail'))
         <div role="alert" class="alert alert-error w-2/3 mx-auto mt-[5%]">
             {{ session('fail') }}

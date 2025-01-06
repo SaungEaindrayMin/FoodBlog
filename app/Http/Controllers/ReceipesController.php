@@ -18,28 +18,36 @@ class ReceipesController extends Controller
 
     public function store(Request $request)
     {
-        $validated = $request->validate([
-            'title' => 'required|string|max:255',
-            'paragraph' => 'required|string',
-            'image' => 'nullable|image|mimes:jpeg,png,jpg|max:2048',
-            'video' => 'nullable|mimes:mp4,avi,mov|max:10240',
-        ]);
+
+        // dd($request->all());
+
+        try {
+            $validated = $request->validate([
+                'title' => 'required|string|max:255',
+                'paragraph' => 'required|string',
+                'image' => 'nullable',
+                'video' => 'nullable',
+            ]);
+
+            // If validation passes
+            $recipe = new Receipes();
+            $recipe->title = $validated['title'];
+            $recipe->paragraph = $validated['paragraph'];
     
-        $recipe = new Receipes();
-        $recipe->title = $validated['title'];
-        $recipe->paragraph = $validated['paragraph'];
+            if ($request->hasFile('image')) {
+                $recipe->image = $request->file('image')->store('images', 'public');
+            }
     
-        if ($request->hasFile('image')) {
-            $recipe->image = $request->file('image')->store('images', 'public');
+            if ($request->hasFile('video')) {
+                $recipe->video = $request->file('video')->store('videos', 'public');
+            }
+    
+            $recipe->save();
+            return redirect()->route('profile.index')->with('success', 'Recipe created successfully!');
+    
+        } catch (\Illuminate\Validation\ValidationException $e) {
+            return redirect()->back()->withErrors($e->validator->errors())->withInput();
         }
-    
-        if ($request->hasFile('video')) {
-            $recipe->video = $request->file('video')->store('videos', 'public');
-        }
-    
-        $recipe->save();
-    
-        return redirect()->route('profile.index')->with('success', 'Recipe created successfully!');
     }
     
 

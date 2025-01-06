@@ -16,6 +16,10 @@ Route::get('/contact', function () {
     return view('layouts.contactUs');
 });
 
+Route::get('/Admin/dashboard', function () {
+    return view('layouts.Admin.dashboard.dashboard');
+});
+
 
 Route::get('/about', function () {
     return view('layouts.AboutUs');

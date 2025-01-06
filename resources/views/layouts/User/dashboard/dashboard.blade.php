@@ -102,11 +102,19 @@
   </figure>
 
   <div class="grid gap-3 mt-4 p-4">
-    <h1 class="text-sm font-semibold ">Name - <span class="font-normal text-xs text-slate-600 ">Tom</span></h1>
-    <p  class="text-sm font-semibold ">Email - <span  class="font-normal text-xs text-slate-600 ">tom@gmail.com</span></p>
-    <a href="" class="btn btn-sm bg-yellow-300 w-full hover:bg-yellow-200 border-0">Update Profile</a>
-  </div>
+    <h1 class="text-sm font-semibold ">Name - 
+        <span class="font-normal text-xs text-slate-600 ">
+        </span>
+    </h1>
+    <p class="text-sm font-semibold ">Email - 
+        <span class="font-normal text-xs text-slate-600 ">
+        </span>
+    </p>
+    <a href="" class="btn btn-sm bg-yellow-300 w-full hover:bg-yellow-200 border-0">
+        Update Profile
+    </a>
 </div>
+
 
 
 {{-- for profile  --}}

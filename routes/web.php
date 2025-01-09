@@ -20,6 +20,20 @@ Route::get('/Admin/dashboard', function () {
     return view('layouts.Admin.dashboard.dashboard');
 });
 
+Route::get('/Admin/dashboard/receipes', function () {
+    return view('layouts.Admin.dashboard.receipes.receipes');
+});
+
+Route::get('/Admin/dashboard/user', function () {
+    return view('layouts.Admin.dashboard.user.user');
+});
+
+Route::get('/Admin/dashboard/admin', function () {
+    return view('layouts.Admin.dashboard.admin.admin');
+});
+
+
+
 
 Route::get('/about', function () {
     return view('layouts.AboutUs');

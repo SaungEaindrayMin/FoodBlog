@@ -84,6 +84,7 @@
 </div>
 
 
+
 {{-- main content  --}}
 <div class="col-start-3 col-span-7 mt-[10%]">
   @yield('content')
@@ -120,7 +121,7 @@
 {{-- for profile  --}}
 
 {{-- for switch account and create new account  --}}
-<div >
+<div>
     <a href="" class="btn btn-sm w-full text-white bg-red-600 hover:bg-red-500 border-0">
       Log Out
     </a>

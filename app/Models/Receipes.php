@@ -9,5 +9,5 @@ class Receipes extends Model
 {
     use HasFactory;
 
-    protected $fillable = ['title', 'paragraph', 'image', 'video'];
+    protected $fillable = ['title', 'paragraph','ingredient', 'image', 'video'];
 }

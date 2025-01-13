@@ -97,29 +97,37 @@
   {{-- for profile --}}
   <div class="bg-[#FFFFF0]  rounded-lg shadow-lg">
   <figure>
+    @if(auth()->check())
     <img 
-    src="https://images.unsplash.com/photo-1568602471122-7832951cc4c5?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=facearea&facepad=2&w=320&h=320&q=80" alt="Avatar"
+    src="{{ auth()->user()->image }}" alt="Avatar"
     class=" w-full h-auto mx-auto object-cover">
+    @else
+    <h1 class="text-sm font-semibold ">No user is currently logged in.</h1>
+@endif
   </figure>
 
   <div class="grid gap-3 mt-4 p-4">
-    <h1 class="text-sm font-semibold ">Name - 
+    @if(auth()->check())
+    <h1 class="text-sm font-semibold ">Name - {{ auth()->user()->firstname }}</h1>
+@else
+    <h1 class="text-sm font-semibold ">No user is currently logged in.</h1>
+@endif
+
         <span class="font-normal text-xs text-slate-600 ">
         </span>
     </h1>
-    <p class="text-sm font-semibold ">Email - 
-        <span class="font-normal text-xs text-slate-600 ">
-        </span>
-    </p>
+    @if(auth()->check())
+    <h1 class="text-sm font-semibold ">Email - {{ auth()->user()->email }}</h1>
+@else
+    <h1 class="text-sm font-semibold ">No user is currently logged in.</h1>
+@endif
     <a href="" class="btn btn-sm bg-yellow-300 w-full hover:bg-yellow-200 border-0">
         Update Profile
     </a>
 </div>
 
 
-
 {{-- for profile  --}}
-
 {{-- for switch account and create new account  --}}
 <div>
     <a href="" class="btn btn-sm w-full text-white bg-red-600 hover:bg-red-500 border-0">

@@ -15,6 +15,7 @@ return new class extends Migration
             $table->id();
             $table->String('title');
             $table->Text('paragraph');
+            $table->Text('ingredient');
             $table->Text('image')->nullable();
             $table->Text('video')->nullable();
             $table->timestamps();

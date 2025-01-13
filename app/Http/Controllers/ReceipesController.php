@@ -25,6 +25,7 @@ class ReceipesController extends Controller
             $validated = $request->validate([
                 'title' => 'required|string|max:255',
                 'paragraph' => 'required|string',
+                'ingredient' => 'required|string',
                 'image' => 'nullable',
                 'video' => 'nullable',
             ]);
@@ -33,6 +34,7 @@ class ReceipesController extends Controller
             $recipe = new Receipes();
             $recipe->title = $validated['title'];
             $recipe->paragraph = $validated['paragraph'];
+            $recipe->ingredient = $validated['ingredient'];
     
             if ($request->hasFile('image')) {
                 $recipe->image = $request->file('image')->store('images', 'public');

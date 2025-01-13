@@ -2,6 +2,8 @@
 
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\authController;
+use App\Http\Controllers\AdminController;
+use App\Http\Controllers\AdminReceipesController;
 use App\Http\Controllers\ReceipesController;
 
 
@@ -32,8 +34,9 @@ Route::get('/Admin/dashboard/admin', function () {
     return view('layouts.Admin.dashboard.admin.admin');
 });
 
-
-
+Route::get('/Admin/dashboard/createAdmin', function () {
+    return view('layouts.Admin.dashboard.admin.create');
+});
 
 Route::get('/about', function () {
     return view('layouts.AboutUs');
@@ -42,12 +45,17 @@ Route::get('/about', function () {
 
 Route::post('/register',[authController::class,'register'])->name('register');
 Route::post('/login',[authController::class,'login'])->name('login');
+Route::post('/Admin/dashboard/createAdmin', [AdminController::class, 'store'])->name('store');
 
-Route::middleware(['guest'])->group(function(){
 
-    Route::get('/User/dashboard/profile', function () {
-        return view('layouts.User.dashboard.Profile.profile');
-    });
+Route::resource('/Admin/dashboard/receipes/receipes',AdminReceipesController::class)->names([
+    'index' => 'receipes.index',
+]);    
+
+
+
+Route::middleware(['auth'])->group(function(){
+
 
     Route::resource('/User/dashboard/profile', ReceipesController::class)->names([
         'index' => 'profile.index',

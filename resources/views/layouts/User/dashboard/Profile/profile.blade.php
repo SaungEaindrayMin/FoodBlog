@@ -53,6 +53,15 @@
             class="w-full p-2 text-gray-700 border rounded-md focus:outline-none focus:ring-2 focus:ring-blue-500" 
             placeholder="What's on your mind?"
             required></textarea>
+
+                    <!-- Textarea for Content -->
+        <textarea name="ingredient" 
+        rows="4" 
+        class="w-full p-2 text-gray-700 border rounded-md focus:outline-none focus:ring-2 focus:ring-blue-500" 
+        placeholder="What are they included?"
+        required></textarea>
+
+            
     
         <!-- File Upload Section -->
         <div class="w-full border border-gray-200 rounded-md flex justify-between items-center">
@@ -87,36 +96,6 @@
   </dialog>
 </div>
 
-{{-- Post Content --}}
-{{-- <div class="max-w-3xl mx-auto mt-[7%] p-6 rounded-lg shadow-md">
-  <h2 class="text-xl font-bold mb-4">Your Post</h2>
-  @foreach ($receipes as $receipe)
-    <div class="mt-6">
-      <h1 class="font-bold text-xl">{{ $receipe->title }}</h1>
-      <p class="text-gray-600">{{ $receipe->paragraph }}</p>
-      <div class="flex space-x-4 mt-2">
-        @if ($receipe->image)
-          <img src="{{ asset('storage/' . $receipe->image) }}" class="w-32 h-32 rounded-md">
-        @endif
-        @if ($receipe->video)
-          <video controls class="w-32 h-32 rounded-md">
-            <source src="{{ asset('storage/' . $receipe->video) }}" type="video/mp4">
-          </video>
-        @endif
-      </div>
-      <div class="mt-2">
-        <form action="{{ route('profile.destroy', $receipe->id) }}" method="POST" class="inline-block">
-          @csrf
-          @method('DELETE')
-          <button type="submit" class="text-red-500">Delete</button>
-        </form>
-      </div>
-    </div>
-  @endforeach
-</div> --}}
-
-
-{{-- Post Content  --}}
 
 
 
@@ -134,11 +113,40 @@
         
         <div class="flex gap-3 items-center">
         <p class="text-slate-600">10:00 AM</p>
-        <button>
+        {{-- <button>
           <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="size-6">
             <path stroke-linecap="round" stroke-linejoin="round" d="M3.75 6.75h16.5M3.75 12h16.5m-16.5 5.25h16.5" />
           </svg>          
-        </button>
+        </button> --}}
+
+
+        <div class="dropdown dropdown-end ">
+          <div tabindex="0" role="button" class="btn btn-ghost btn-circle avatar hover:bg-yellow-400">
+            <div class="flex-none">
+                <svg
+                  xmlns="http://www.w3.org/2000/svg"
+                  fill="none"
+                  viewBox="0 0 24 24"
+                  class="inline-block h-5 w-5 stroke-current">
+                  <path
+                    stroke-linecap="round"
+                    stroke-linejoin="round"
+                    stroke-width="2"
+                    d="M4 6h16M4 12h16M4 18h16"></path>
+                </svg>
+            </div>
+          </div>
+          <div
+            tabindex="0"
+            class="text-center  menu-sm grid justify-center items-center gap-3 dropdown-content bg-base-100 rounded-md z-[1] mt-3 hover:bg-yellow-300 p-2 shadow">
+              <form action="{{ route('profile.destroy', $receipe->id) }}" method="POST" class="inline-block">
+                @csrf
+                @method('DELETE')
+                <button type="submit" class="text-red-500">Delete</button>
+              </form>
+          </div>
+      </div>
+
       </div>
   </div>
 
@@ -157,13 +165,7 @@
           </video>
         @endif
       </div>
-      <div class="mt-2">
-        <form action="{{ route('profile.destroy', $receipe->id) }}" method="POST" class="inline-block">
-          @csrf
-          @method('DELETE')
-          <button type="submit" class="text-red-500">Delete</button>
-        </form>
-      </div>
+
     </div>
   </div>
   @endforeach

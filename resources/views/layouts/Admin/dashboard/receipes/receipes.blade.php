@@ -12,14 +12,23 @@
         <div class="flex justify-between items-center">
             <h1 class="text-3xl font-semibold">Receipes</h1>
 
-            <div class="flex gap-x-3">
+            <div class="flex gap-x-3 items-center">
 
+                <form class="messageBox" class="flex gap-x-2">
                 <div class="relative border border-slate-400 rounded-lg">
                     <div class="absolute inset-y-0 start-0 flex items-center pointer-events-none z-20 ps-3.5">
                         <svg class="shrink-0 size-4 text-gray-400" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="11" cy="11" r="8"/><path d="m21 21-4.3-4.3"/></svg>
                     </div>
-                    <input type="text" class="py-2 ps-10 pe-16 block w-full bg-white border-slate-200 rounded-lg text-sm focus:outline-none" placeholder="Search">
+                    <input name="search" placeholder="Search..." type="text" id="messageInput" value="{{ request()->input('search') }}" class="py-2 ps-10 pe-16 block w-full bg-white border-slate-200 rounded-lg text-sm focus:outline-none" >
+
                 </div>
+                <button type="submit" id="sendButton">
+                    <span>Search</span>
+                </button>
+            </form>
+
+
+            
 
                 <button class="flex gap-x-2 bg-[#FFFFF0] p-2 rounded-lg shadow-lg">
                     <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="size-6">
@@ -75,97 +84,32 @@
                 </thead>
 
                 <tbody class="divide-y divide-gray-200">
+                    @foreach ($receipes as $receipe)
+                        
+
                     <tr class="hover:bg-gray-50 ">
-                        <td class="size-px whitespace-nowrap align-top"><span class="p-6">1</span></td>
+                        <td class="w-44 min-w-44  align-top"><span class="p-6 flex items-center">{{ ($receipes->currentPage() - 1) * $receipes->perPage() + $loop->index + 1 }}</span></td>
                         <td class="w-44 min-w-44 align-top">
                             <div class="flex items-center gap-x-3 p-6">
-                                <img class="inline-block rounded-md" src="https://images.unsplash.com/photo-1473093295043-cdd812d0e601?w=900&auto=format&fit=crop&q=60&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8Mnx8Zm9vZHxlbnwwfHwwfHx8MA%3D%3D" alt="Product Image">
+                                <div class="flex items-center gap-x-3 p-6">
+                                    @if ($receipe->image)
+                                    <img src="{{ asset('images/employees/' . $receipe->image) }}" alt="receipes Photo" class="rounded-md">
+                                        @else
+                                            No Image
+                                        @endif
+                                </div>
                             </div>
                         </td>
-                        <td class="w-44 min-w-44 align-top"><span class="block text-sm text-gray-500 line-clamp-3 p-6">Chicken Curry</span></td>
-                        <td class="w-44 min-w-44 align-top"><span class="block text-sm text-gray-500 line-clamp-3 p-6">Chicken is one of the most versatile ingredients.</span></td>
-                        <td class="w-44 min-w-44 align-top"><span class="block text-sm text-gray-500 line-clamp-3 p-6">Ingredients detail here.</span></td>
+                        <td class="w-44 min-w-44 align-top"><span class="block text-sm text-gray-500 line-clamp-3 p-6">{{$receipe->title}}</span></td>
+                        <td class="w-44 min-w-44 align-top"><span class="block text-sm text-gray-500 line-clamp-3 p-6">{{$receipe->ingridient}}</span></td>
+                        <td class="w-44 min-w-44 align-top"><span class="block text-sm text-gray-500 line-clamp-3 p-6">{{$receipe->paragraph}}.</span></td>
                         <td class="size-px whitespace-nowrap align-top">
                             <div class="p-6"><button class="btn btn-sm  bg-red-500 text-sm text-white rounded-md">DELETE</button></div>
                         </td>
                     </tr>
+                    @endforeach
 
-                    <tr class="hover:bg-gray-50 ">
-                        <td class="size-px whitespace-nowrap align-top"><span class="p-6">2</span></td>
-                        <td class="w-44 min-w-44 align-top">
-                            <div class="flex items-center gap-x-3 p-6">
-                                <img class="inline-block rounded-md" src="https://images.unsplash.com/photo-1473093295043-cdd812d0e601?w=900&auto=format&fit=crop&q=60&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8Mnx8Zm9vZHxlbnwwfHwwfHx8MA%3D%3D" alt="Product Image">
-                            </div>
-                        </td>
-                        <td class="w-44 min-w-44 align-top"><span class="block text-sm text-gray-500 line-clamp-3 p-6">Chicken Curry</span></td>
-                        <td class="w-44 min-w-44 align-top"><span class="block text-sm text-gray-500 line-clamp-3 p-6">Chicken is one of the most versatile ingredients.</span></td>
-                        <td class="w-44 min-w-44 align-top"><span class="block text-sm text-gray-500 line-clamp-3 p-6">Ingredients detail here.</span></td>
-                        <td class="size-px whitespace-nowrap align-top">
-                            <div class="p-6"><button class="btn btn-sm  bg-red-500 text-sm text-white rounded-md">DELETE</button></div>
-                        </td>
-                    </tr>
-
-                    <tr class="hover:bg-gray-50 ">
-                        <td class="size-px whitespace-nowrap align-top"><span class="p-6">3</span></td>
-                        <td class="w-44 min-w-44 align-top">
-                            <div class="flex items-center gap-x-3 p-6">
-                                <img class="inline-block rounded-md" src="https://images.unsplash.com/photo-1473093295043-cdd812d0e601?w=900&auto=format&fit=crop&q=60&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8Mnx8Zm9vZHxlbnwwfHwwfHx8MA%3D%3D" alt="Product Image">
-                            </div>
-                        </td>
-                        <td class="w-44 min-w-44 align-top"><span class="block text-sm text-gray-500 line-clamp-3 p-6">Chicken Curry</span></td>
-                        <td class="w-44 min-w-44 align-top"><span class="block text-sm text-gray-500 line-clamp-3 p-6">Chicken is one of the most versatile ingredients.</span></td>
-                        <td class="w-44 min-w-44 align-top"><span class="block text-sm text-gray-500 line-clamp-3 p-6">Ingredients detail here.</span></td>
-                        <td class="size-px whitespace-nowrap align-top">
-                            <div class="p-6"><button class="btn btn-sm  bg-red-500 text-sm text-white rounded-md">DELETE</button></div>
-                        </td>
-                    </tr>
-
-                    <tr class="hover:bg-gray-50 ">
-                        <td class="size-px whitespace-nowrap align-top"><span class="p-6">4</span></td>
-                        <td class="w-44 min-w-44 align-top">
-                            <div class="flex items-center gap-x-3 p-6">
-                                <img class="inline-block rounded-md" src="https://images.unsplash.com/photo-1473093295043-cdd812d0e601?w=900&auto=format&fit=crop&q=60&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8Mnx8Zm9vZHxlbnwwfHwwfHx8MA%3D%3D" alt="Product Image">
-                            </div>
-                        </td>
-                        <td class="w-44 min-w-44 align-top"><span class="block text-sm text-gray-500 line-clamp-3 p-6">Chicken Curry</span></td>
-                        <td class="w-44 min-w-44 align-top"><span class="block text-sm text-gray-500 line-clamp-3 p-6">Chicken is one of the most versatile ingredients.</span></td>
-                        <td class="w-44 min-w-44 align-top"><span class="block text-sm text-gray-500 line-clamp-3 p-6">Ingredients detail here.</span></td>
-                        <td class="size-px whitespace-nowrap align-top">
-                            <div class="p-6"><button class="btn btn-sm  bg-red-500 text-sm text-white rounded-md">DELETE</button></div>
-                        </td>
-                    </tr>
-
-                    <tr class="hover:bg-gray-50 ">
-                        <td class="size-px whitespace-nowrap align-top"><span class="p-6">5</span></td>
-                        <td class="w-44 min-w-44 align-top">
-                            <div class="flex items-center gap-x-3 p-6">
-                                <img class="inline-block rounded-md" src="https://images.unsplash.com/photo-1473093295043-cdd812d0e601?w=900&auto=format&fit=crop&q=60&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8Mnx8Zm9vZHxlbnwwfHwwfHx8MA%3D%3D" alt="Product Image">
-                            </div>
-                        </td>
-                        <td class="w-44 min-w-44 align-top"><span class="block text-sm text-gray-500 line-clamp-3 p-6">Chicken Curry</span></td>
-                        <td class="w-44 min-w-44 align-top"><span class="block text-sm text-gray-500 line-clamp-3 p-6">Chicken is one of the most versatile ingredients.</span></td>
-                        <td class="w-44 min-w-44 align-top"><span class="block text-sm text-gray-500 line-clamp-3 p-6">Ingredients detail here.</span></td>
-                        <td class="size-px whitespace-nowrap align-top">
-                            <div class="p-6"><button class="btn btn-sm  bg-red-500 text-sm text-white rounded-md">DELETE</button></div>
-                        </td>
-                    </tr>
-
-                    <tr class="hover:bg-gray-50 ">
-                        <td class="size-px whitespace-nowrap align-top"><span class="p-6">6</span></td>
-                        <td class="w-44 min-w-44 align-top">
-                            <div class="flex items-center gap-x-3 p-6">
-                                <img class="inline-block rounded-md" src="https://images.unsplash.com/photo-1473093295043-cdd812d0e601?w=900&auto=format&fit=crop&q=60&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8Mnx8Zm9vZHxlbnwwfHwwfHx8MA%3D%3D" alt="Product Image">
-                            </div>
-                        </td>
-                        <td class="w-44 min-w-44 align-top"><span class="block text-sm text-gray-500 line-clamp-3 p-6">Chicken Curry</span></td>
-                        <td class="w-44 min-w-44 align-top"><span class="block text-sm text-gray-500 line-clamp-3 p-6">Chicken is one of the most versatile ingredients.</span></td>
-                        <td class="w-44 min-w-44 align-top"><span class="block text-sm text-gray-500 line-clamp-3 p-6">Ingredients detail here.</span></td>
-                        <td class="size-px whitespace-nowrap align-top">
-                            <div class="p-6">
-                                <button class="btn btn-sm  bg-red-500 text-sm text-white rounded-md">DELETE</button>
-                            </div>
-                        </td>
-                    </tr>
+                    
                 </tbody>
             </table>
         </div>

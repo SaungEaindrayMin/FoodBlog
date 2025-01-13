@@ -1,5 +1,3 @@
-
-
 <div class="max-w-[85rem]    mx-auto ">
   <div class="max-w-xl mx-auto">
     <div class="text-center">
@@ -17,7 +15,7 @@
      
      </h2>
 
-      <form method="POST" action="{{route('register')}}">
+      <form method="POST" action="{{route('register')}}" enctype="multipart/form-data">
         <div class="grid gap-4 ">
 
         @csrf
@@ -60,8 +58,7 @@
                   dropArea.classList.remove('bg-blue-50');
                   const files = event.dataTransfer.files;
                   inputFile.files = files;
-                  // You can now handle the uploaded files here
-                  console.log(files);
+ 
               });
           </script>
           
@@ -132,7 +129,3 @@
 
   
 </div>
-
-
-
-

@@ -157,11 +157,11 @@
       <p class="text-gray-600 line-clamp-3">{{ $receipe->paragraph }}</p>
       <div class="flex gap-2  mx-auto mt-2">
         @if ($receipe->image)
-          <img src="{{ asset('storage/' . $receipe->image) }}" class="rounded-md w-3/6 ">
+          <img src="{{ asset($receipe->image) }}" class="rounded-md w-3/6 ">
         @endif
         @if ($receipe->video)
           <video controls class="w-3/6">
-            <source src="{{ asset('storage/' . $receipe->video) }}" type="video/mp4">
+            <source src="{{ asset($receipe->video) }}" type="video/mp4">
           </video>
         @endif
       </div>
@@ -173,4 +173,3 @@
     
 
 @endsection
-

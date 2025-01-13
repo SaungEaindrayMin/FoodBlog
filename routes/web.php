@@ -5,70 +5,61 @@ use App\Http\Controllers\authController;
 use App\Http\Controllers\AdminController;
 use App\Http\Controllers\AdminReceipesController;
 use App\Http\Controllers\ReceipesController;
+use App\Http\Controllers\UserController;
+use App\Http\Controllers\CreateAdminController;
 
-
-
-
+// Public Routes
 Route::get('/', function () {
-    return view ('welcome');
-});
-
-
-Route::get('/contact', function () {
-    return view('layouts.contactUs');
-});
-
-Route::get('/Admin/dashboard', function () {
-    return view('layouts.Admin.dashboard.dashboard');
-});
-
-Route::get('/Admin/dashboard/receipes', function () {
-    return view('layouts.Admin.dashboard.receipes.receipes');
-});
-
-Route::get('/Admin/dashboard/user', function () {
-    return view('layouts.Admin.dashboard.user.user');
-});
-
-Route::get('/Admin/dashboard/admin', function () {
-    return view('layouts.Admin.dashboard.admin.admin');
-});
-
-Route::get('/Admin/dashboard/createAdmin', function () {
-    return view('layouts.Admin.dashboard.admin.create');
+    return view('welcome');
 });
 
 Route::get('/about', function () {
     return view('layouts.AboutUs');
 });
 
-
-Route::post('/register',[authController::class,'register'])->name('register');
-Route::post('/login',[authController::class,'login'])->name('login');
-Route::post('/Admin/dashboard/createAdmin', [AdminController::class, 'store'])->name('store');
-
-
-Route::resource('/Admin/dashboard/receipes/receipes',AdminReceipesController::class)->names([
-    'index' => 'receipes.index',
-]);    
-
-
-
-Route::middleware(['auth'])->group(function(){
-
-
-    Route::resource('/User/dashboard/profile', ReceipesController::class)->names([
-        'index' => 'profile.index',
-        'store' => 'profile.store',
-        'destroy' => 'profile.destroy',
-    ]);    
-    
-    Route::get('/User/dashboard/newsfeed', function () {
-        return view('layouts.User.dashboard.Newsfeed.newsfeed');
-    });
-    
-    Route::get('/User/dashboard/details', function () {
-        return view('layouts.User.dashboard.Details.details');
-    });
+Route::get('/contact', function () {
+    return view('layouts.contactUs');
 });
 
+Route::get('/register', function () {
+    return view('auth.userRegister');
+})->name('register.form');
+
+Route::get('/login', function () {
+    return view('auth.userLogin');
+})->name('login.form');
+
+// Authentication Routes
+Route::post('/register', [authController::class, 'register'])->name('register');
+Route::post('/login', [authController::class, 'login'])->name('login');
+
+// Admin Dashboard Routes
+Route::get('/admin/dashboard/home', function () {
+    return view('layouts.Admin.dashboard.dashboard');
+});
+
+// Admin Creation Routes
+
+Route::resource('/admin/dashboard/createadmin', CreateAdminController::class)->names([
+    'index' => 'createadmin.index',
+    'store' => 'createadmin.store',
+]);
+
+Route::get('/admin/dashboard/manageadmin', [AdminController::class, 'index'])->name('manageadmin');
+
+Route::get('/admin/dashboard/manageuser', [UserController::class, 'index'])->name('manageuser');
+
+Route::get('/admin/dashboard/managerecipe', [ReceipesController::class, 'manage'])->name('managerecipe');
+
+Route::delete('/admin/dashboard/deleteuser/{id}', [UserController::class, 'destroy'])->name('deleteuser');
+Route::delete('/admin/dashboard/deleteadmin/{id}', [AdminController::class, 'destroy'])->name('deleteadmin');
+
+// Authenticated User Routes
+Route::middleware(['auth'])->group(function () {
+    Route::get('/logout', [authController::class, 'logout'])->name('logout');
+
+    Route::resource('/user/dashboard/profile', ReceipesController::class)->names([
+        'index' => 'profile.index',
+        'store' => 'profile.store',
+    ]);
+});

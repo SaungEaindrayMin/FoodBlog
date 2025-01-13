@@ -3,40 +3,44 @@
 namespace App\Http\Controllers;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Http\Request;
-use  App\Models\User;
-use Hash;
-use Session;
+use App\Models\User;
+use Illuminate\Support\Facades\Hash;
+use Illuminate\Support\Facades\Session;
+use Exception;
 
-class authController extends Controller
+class AuthController extends Controller
 {
-    public function register(Request $request){
+    public function register(Request $request)
+    {
+        $request->validate([
+            'image' => 'required|image|mimes:jpeg,png,jpg,gif|max:2048',
+            'firstname' => ['required'],
+            'lastname' => ['required'],
+            'email' => ['required', 'email', 'unique:users'],
+            'password' => ['required', 'confirmed'],
+            'role' => 'required|in:user,admin'
+        ]);
 
         try {
-            $request->validate([
-                'image' => ['required'],
-                'firstname' => ['required'],
-                'lastname' => ['required'],
-                'email' => ['required', 'email'],
-                'password' => ['required', 'confirmed'],
-                'role' => 'required|in:user,admin',
+            // Handle image upload
+            $imageName = time().'.'.$request->image->extension();
+            $request->image->move(public_path('images/users'), $imageName);
+
+            // Create user with all fields
+            $user = User::create([
+                'image' => 'images/users/' . $imageName,
+                'firstname' => $request->firstname,
+                'lastname' => $request->lastname,
+                'email' => $request->email,
+                'password' => Hash::make($request->password),
+                'role' => $request->role
             ]);
+
+            return redirect()->route('login.form')->with('success', 'Registration successful! Please login.');
         } catch (Exception $e) {
-            dd($e->getMessage(), $e->errors());
+            dd($e);
+            return back()->with('fail', 'Registration failed');
         }
-        
-        
-
-
-        $user = new User();
-        $user->image=$request->image;
-        $user->firstname = $request->firstname;
-        $user->lastname = $request->lastname;
-        $user->email = $request->email;
-        $user->password = Hash::make($request->password);
-        $user->role = $request -> role;
-        $user->save();
-
-
     }
 
     public function login(Request $request)
@@ -46,28 +50,16 @@ class authController extends Controller
             'password' => ['required']
         ]);
 
-        $user = User::where('email', '=', $request->email)->first();
-
         try {
-            $user && Hash::check($request->password, $user->password);
-
-
             if (Auth::attempt($request->only('email', 'password'))) {
                 $request->session()->regenerate();
                 return redirect('/User/dashboard/profile');
-            }else{
-                dd("hello");
             }
 
+            return back()->with('fail', 'Invalid credentials');
 
+        } catch (Exception $e) {
+            return back()->with('fail', 'Login failed');
         }
-
-        catch(error $e){
-            dd($e);
-        }
-
-        return back()->with('fail', 'Invalid credentials'); 
     }
-
-
 }

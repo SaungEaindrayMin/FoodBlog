@@ -53,7 +53,7 @@ class AuthController extends Controller
         try {
             if (Auth::attempt($request->only('email', 'password'))) {
                 $request->session()->regenerate();
-                return redirect('/User/dashboard/profile');
+                return redirect('/user/dashboard/profile');
             }
 
             return back()->with('fail', 'Invalid credentials');

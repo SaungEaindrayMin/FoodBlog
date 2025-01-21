@@ -53,6 +53,9 @@ class AuthController extends Controller
         try {
             if (Auth::attempt($request->only('email', 'password'))) {
                 $request->session()->regenerate();
+<<<<<<< HEAD
+                return redirect('/user/dashboard/profile');
+=======
                 
                 // Get authenticated user's role
                 $user = Auth::user();
@@ -63,6 +66,7 @@ class AuthController extends Controller
                 } else {
                     return redirect('/user/dashboard/profile');
                 }
+>>>>>>> 800657f0f50d7ada28bbd4074c16457f2c62187c
             }
 
             return back()->with('fail', 'Invalid credentials');

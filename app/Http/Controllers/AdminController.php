@@ -85,4 +85,42 @@ class AdminController extends Controller
             return redirect()->route('manageadmin')->with('error', 'Failed to delete admin.');
         }
     }
+
+    public function update(Request $request, $id)
+    {
+        try {
+            $admin = User::findOrFail($id);
+
+            $request->validate([
+                'firstname' => ['required'],
+                'lastname' => ['required'],
+                'email' => ['required', 'email', 'unique:users,email,' . $id],
+                'image' => ['nullable', 'image', 'mimes:jpeg,png,jpg,gif', 'max:2048'],
+            ]);
+
+            // Update basic information
+            $admin->firstname = $request->firstname;
+            $admin->lastname = $request->lastname;
+            $admin->email = $request->email;
+
+            // Handle image upload if a new image is provided
+            if ($request->hasFile('image')) {
+                // Delete old image if it exists
+                if ($admin->image && file_exists(public_path($admin->image))) {
+                    unlink(public_path($admin->image));
+                }
+
+                // Upload new image
+                $imageName = time() . '.' . $request->image->extension();
+                $request->image->move(public_path('images/users'), $imageName);
+                $admin->image = 'images/users/' . $imageName;
+            }
+
+            $admin->save();
+
+            return redirect()->route('manageadmin')->with('success', 'Admin updated successfully.');
+        } catch (\Exception $e) {
+            return back()->withErrors(['error' => $e->getMessage()])->withInput();
+        }
+    }
 }

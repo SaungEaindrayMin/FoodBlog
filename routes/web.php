@@ -38,21 +38,18 @@ Route::get('/admin/dashboard/home', function () {
     return view('layouts.Admin.dashboard.dashboard');
 });
 
-// Admin Creation Routes
-
 Route::resource('/admin/dashboard/createadmin', CreateAdminController::class)->names([
     'index' => 'createadmin.index',
     'store' => 'createadmin.store',
 ]);
 
 Route::get('/admin/dashboard/manageadmin', [AdminController::class, 'index'])->name('manageadmin');
-
 Route::get('/admin/dashboard/manageuser', [UserController::class, 'index'])->name('manageuser');
-
 Route::get('/admin/dashboard/managerecipe', [ReceipesController::class, 'manage'])->name('managerecipe');
 
 Route::delete('/admin/dashboard/deleteuser/{id}', [UserController::class, 'destroy'])->name('deleteuser');
 Route::delete('/admin/dashboard/deleteadmin/{id}', [AdminController::class, 'destroy'])->name('deleteadmin');
+Route::put('/admin/dashboard/admin/{id}', [AdminController::class, 'update'])->name('admin.update');
 
 // Authenticated User Routes
 Route::middleware(['auth'])->group(function () {

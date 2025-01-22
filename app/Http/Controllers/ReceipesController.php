@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\Category;
 use Illuminate\Http\Request;
 use App\Models\Receipes;
 use Illuminate\Support\Facades\Log;
@@ -12,7 +13,8 @@ class ReceipesController extends Controller
     public function index()
     {
         $receipes = Receipes::all();
-        return view('layouts.User.dashboard.Profile.profile', compact('receipes'));
+        $categories = Category::all();
+        return view('layouts.User.dashboard.Profile.profile', compact('categories', 'receipes'));
     }
 
 

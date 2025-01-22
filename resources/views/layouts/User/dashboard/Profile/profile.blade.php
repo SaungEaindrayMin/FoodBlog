@@ -43,28 +43,61 @@
             <p class="font-semibold text-gray-800">Ruri</p>
         </div>
     
+        <!-- Category Dropdown -->
+        <div class="form-control w-full">
+            <select name="category_id" class="select select-bordered w-full" required>
+                <option value="" disabled selected>Select Category</option>
+                @foreach($categories as $category)
+                    <option value="{{ $category->id }}">{{ $category->name }}</option>
+                @endforeach
+            </select>
+        </div>
+    
         <!-- Title -->
         <input type="text" 
             name="title"
             class="w-full p-2 text-gray-700 border rounded-md focus:outline-none focus:ring-2 focus:ring-blue-500"
-            placeholder="Your Title"
+            placeholder="Recipe Title"
             required>
     
-        <!-- Textarea for Content -->
+        <!-- Description -->
         <textarea name="paragraph" 
             rows="4" 
             class="w-full p-2 text-gray-700 border rounded-md focus:outline-none focus:ring-2 focus:ring-blue-500" 
-            placeholder="What's on your mind?"
+            placeholder="Recipe Description"
             required></textarea>
 
-                    <!-- Textarea for Content -->
-        <textarea name="ingredient" 
-        rows="4" 
-        class="w-full p-2 text-gray-700 border rounded-md focus:outline-none focus:ring-2 focus:ring-blue-500" 
-        placeholder="What are they included?"
-        required></textarea>
+        <!-- Dynamic Ingredients -->
+        <div id="ingredients-container" class="space-y-2">
+            <div class="flex items-center gap-2">
+                <input type="text" 
+                    name="ingredients[]" 
+                    class="w-full p-2 text-gray-700 border rounded-md focus:outline-none focus:ring-2 focus:ring-blue-500"
+                    placeholder="Add Ingredient"
+                    required>
+                <button type="button" onclick="addIngredient()" class="btn btn-circle btn-sm bg-blue-500 text-white">
+                    <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5" viewBox="0 0 20 20" fill="currentColor">
+                        <path fill-rule="evenodd" d="M10 5a1 1 0 011 1v3h3a1 1 0 110 2h-3v3a1 1 0 11-2 0v-3H6a1 1 0 110-2h3V6a1 1 0 011-1z" clip-rule="evenodd" />
+                    </svg>
+                </button>
+            </div>
+        </div>
 
-            
+        <!-- Dynamic Instructions -->
+        <div id="instructions-container" class="space-y-2">
+            <div class="flex items-center gap-2">
+                <input type="text" 
+                    name="instructions[]" 
+                    class="w-full p-2 text-gray-700 border rounded-md focus:outline-none focus:ring-2 focus:ring-blue-500"
+                    placeholder="Add Instruction Step"
+                    required>
+                <button type="button" onclick="addInstruction()" class="btn btn-circle btn-sm bg-blue-500 text-white">
+                    <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5" viewBox="0 0 20 20" fill="currentColor">
+                        <path fill-rule="evenodd" d="M10 5a1 1 0 011 1v3h3a1 1 0 110 2h-3v3a1 1 0 11-2 0v-3H6a1 1 0 110-2h3V6a1 1 0 011-1z" clip-rule="evenodd" />
+                    </svg>
+                </button>
+            </div>
+        </div>
     
         <!-- File Upload Section -->
         <div class="w-full border border-gray-200 rounded-md flex justify-between items-center">
@@ -91,7 +124,7 @@
       </div>
     
         <!-- Submit Button -->
-        <button type="submit" class="bg-blue-500 hover:bg-blue-600 text-white py-2 px-4 rounded-md">Post</button>
+        <button type="submit" class="bg-blue-500 hover:bg-blue-600 text-white py-2 px-4 rounded-md">Post Recipe</button>
     </form>
     
     
@@ -172,3 +205,43 @@
     
 
 @endsection
+
+<script>
+function addIngredient() {
+    const container = document.getElementById('ingredients-container');
+    const newInput = document.createElement('div');
+    newInput.className = 'flex items-center gap-2';
+    newInput.innerHTML = `
+        <input type="text" 
+            name="ingredients[]" 
+            class="w-full p-2 text-gray-700 border rounded-md focus:outline-none focus:ring-2 focus:ring-blue-500"
+            placeholder="Add Ingredient"
+            required>
+        <button type="button" onclick="this.parentElement.remove()" class="btn btn-circle btn-sm bg-red-500 text-white">
+            <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5" viewBox="0 0 20 20" fill="currentColor">
+                <path fill-rule="evenodd" d="M4.293 4.293a1 1 0 011.414 0L10 8.586l4.293-4.293a1 1 0 111.414 1.414L11.414 10l4.293 4.293a1 1 0 01-1.414 1.414L10 11.414l-4.293 4.293a1 1 0 01-1.414-1.414L8.586 10 4.293 5.707a1 1 0 010-1.414z" clip-rule="evenodd" />
+            </svg>
+        </button>
+    `;
+    container.appendChild(newInput);
+}
+
+function addInstruction() {
+    const container = document.getElementById('instructions-container');
+    const newInput = document.createElement('div');
+    newInput.className = 'flex items-center gap-2';
+    newInput.innerHTML = `
+        <input type="text" 
+            name="instructions[]" 
+            class="w-full p-2 text-gray-700 border rounded-md focus:outline-none focus:ring-2 focus:ring-blue-500"
+            placeholder="Add Instruction Step"
+            required>
+        <button type="button" onclick="this.parentElement.remove()" class="btn btn-circle btn-sm bg-red-500 text-white">
+            <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5" viewBox="0 0 20 20" fill="currentColor">
+                <path fill-rule="evenodd" d="M4.293 4.293a1 1 0 011.414 0L10 8.586l4.293-4.293a1 1 0 111.414 1.414L11.414 10l4.293 4.293a1 1 0 01-1.414 1.414L10 11.414l-4.293 4.293a1 1 0 01-1.414-1.414L8.586 10 4.293 5.707a1 1 0 010-1.414z" clip-rule="evenodd" />
+            </svg>
+        </button>
+    `;
+    container.appendChild(newInput);
+}
+</script>

@@ -2,36 +2,39 @@
 
 namespace App\Http\Controllers;
 
-use Illuminate\Http\Request;
 use App\Models\User;
-use Illuminate\Support\Facades\Log;
+use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Auth;
 
 class UserController extends Controller
 {
-    public function index(Request $request)
+    public function profile()
     {
-        $query = User::where('role', 'user');
+        $user = Auth::user();
+        return view('layouts.User.dashboard.Profile.profile', compact('user'));
+    }
 
-        // Search functionality
-        if ($request->has('search')) {
-            $searchTerm = $request->input('search');
-            $query->where(function($q) use ($searchTerm) {
-                $q->where('firstname', 'like', "%{$searchTerm}%")
-                  ->orWhere('lastname', 'like', "%{$searchTerm}%")
-                  ->orWhere('email', 'like', "%{$searchTerm}%");
-            });
-        }
+    public function cookbook()
+    {
+        return view('layouts.User.dashboard.cookbook');
+    }
 
-        $users = $query->get();
-        return view('layouts.Admin.dashboard.user.manage', [
-            'users' => $users,
-            'searchTerm' => $request->input('search', '')
-        ]);
+    public function education()
+    {
+        return view('layouts.User.dashboard.education');
+    }
+
+    // Admin methods
+    public function index()
+    {
+        $users = User::all();
+        return view('layouts.Admin.dashboard.admin.manage', compact('users'));
     }
 
     public function destroy($id)
     {
         try {
+            // Find the user by ID
             $user = User::findOrFail($id);
 
             // Delete the user
@@ -40,8 +43,6 @@ class UserController extends Controller
             // Redirect back with success message
             return redirect()->route('manageuser')->with('success', 'User deleted successfully.');
         } catch (\Exception $e) {
-
-
             // Redirect back with error message
             return redirect()->route('manageuser')->with('error', 'Failed to delete user.');
         }

@@ -13,19 +13,19 @@
     <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
       <div class="flex flex-col rounded-xl p-4 md:p-6 bg-white border border-yellow-500 ">
         <div class="flex items-center gap-x-4">
-          <img class="rounded-full size-20" src="https://images.unsplash.com/photo-1568602471122-7832951cc4c5?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=facearea&facepad=2&w=320&h=320&q=80" alt="Avatar">
+          <img class="rounded-full size-20 object-cover" src="/team1.avif" alt="Avatar">
           <div class="grow">
             <h3 class="font-medium text-gray-800 ">
-              Ruri
+              James Anderson
             </h3>
             <p class="text-xs uppercase text-gray-500 ">
-              Founder
+              Food Photographer
             </p>
           </div>
         </div>
   
         <p class="mt-3 text-gray-500 ">
-          I am an ambitious workaholic, but apart from that, pretty simple person.
+          A creative food stylist and photographer who captures the beauty of every dish. His vibrant and mouthwatering photos inspire foodies worldwide.
         </p>
   
         <!-- Social Brands -->
@@ -52,19 +52,19 @@
   
       <div class="flex flex-col rounded-xl p-4 md:p-6 bg-white border border-yellow-500 ">
         <div class="flex items-center gap-x-4">
-          <img class="rounded-full size-20" src="https://images.unsplash.com/photo-1568602471122-7832951cc4c5?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=facearea&facepad=2&w=320&h=320&q=80" alt="Avatar">
+          <img class="rounded-full size-20 object-cover" src="/team2.avif" alt="Avatar">
           <div class="grow">
             <h3 class="font-medium text-gray-800 ">
-              Ruri
+              Sarah Williams
             </h3>
             <p class="text-xs uppercase text-gray-500 ">
-              Founder
+              Recipe Developer
             </p>
           </div>
         </div>
   
         <p class="mt-3 text-gray-500 ">
-          I am an ambitious workaholic, but apart from that, pretty simple person.
+          A passionate chef specializing in creating unique recipes that bring comfort and joy to the kitchen. Her goal is to inspire home cooks with flavorful and easy-to-follow dishes.
         </p>
   
         <!-- Social Brands -->
@@ -91,19 +91,19 @@
   
       <div class="flex flex-col rounded-xl p-4 md:p-6 bg-white border border-yellow-500 ">
         <div class="flex items-center gap-x-4">
-          <img class="rounded-full size-20" src="https://images.unsplash.com/photo-1568602471122-7832951cc4c5?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=facearea&facepad=2&w=320&h=320&q=80" alt="Avatar">
+          <img class="rounded-full size-20 object-cover" src="/team3.avif" alt="Avatar">
           <div class="grow">
             <h3 class="font-medium text-gray-800 ">
-              Ruri
+              Robert Lee
             </h3>
             <p class="text-xs uppercase text-gray-500 ">
-              Founder
+              Culinary Historian
             </p>
           </div>
         </div>
   
         <p class="mt-3 text-gray-500 ">
-          I am an ambitious workaholic, but apart from that, pretty simple person.
+          Sharing the stories and traditions behind classic recipes, Robert brings a deeper appreciation for the cultural significance of food.
         </p>
   
         <!-- Social Brands -->
@@ -130,19 +130,19 @@
   
       <div class="flex flex-col rounded-xl p-4 md:p-6 bg-white border border-yellow-500 ">
         <div class="flex items-center gap-x-4">
-          <img class="rounded-full size-20" src="https://images.unsplash.com/photo-1568602471122-7832951cc4c5?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=facearea&facepad=2&w=320&h=320&q=80" alt="Avatar">
+          <img class="rounded-full size-20 object-cover" src="/team4.avif" alt="Avatar">
           <div class="grow">
             <h3 class="font-medium text-gray-800 ">
-              Ruri
+              Emily Carter
             </h3>
             <p class="text-xs uppercase text-gray-500 ">
-              Founder
+              Community Manager
             </p>
           </div>
         </div>
   
         <p class="mt-3 text-gray-500 ">
-          I am an ambitious workaholic, but apart from that, pretty simple person.
+          An advocate for building a supportive and inclusive food blogging community. She connects food lovers and encourages them to share their culinary journeys.
         </p>
   
         <!-- Social Brands -->
@@ -169,19 +169,19 @@
   
       <div class="flex flex-col rounded-xl p-4 md:p-6 bg-white border border-yellow-500 ">
         <div class="flex items-center gap-x-4">
-          <img class="rounded-full size-20" src="https://images.unsplash.com/photo-1568602471122-7832951cc4c5?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=facearea&facepad=2&w=320&h=320&q=80" alt="Avatar">
+          <img class="rounded-full size-20 object-cover" src="/team5.avif" alt="Avatar">
           <div class="grow">
             <h3 class="font-medium text-gray-800 ">
-              Ruri
+              Daniel Garcia
             </h3>
             <p class="text-xs uppercase text-gray-500 ">
-              Founder
+              Food Critic and Writer
             </p>
           </div>
         </div>
   
         <p class="mt-3 text-gray-500 ">
-          I am an ambitious workaholic, but apart from that, pretty simple person.
+          With a knack for storytelling, Daniel reviews recipes, restaurants, and culinary trends, bringing the flavors to life through his vivid writing.
         </p>
   
         <!-- Social Brands -->
@@ -208,19 +208,19 @@
   
       <div class="flex flex-col rounded-xl p-4 md:p-6 bg-white border border-yellow-500 ">
         <div class="flex items-center gap-x-4">
-          <img class="rounded-full size-20" src="https://images.unsplash.com/photo-1568602471122-7832951cc4c5?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=facearea&facepad=2&w=320&h=320&q=80" alt="Avatar">
+          <img class="rounded-full size-20 object-cover" src="/team6.avif" alt="Avatar">
           <div class="grow">
             <h3 class="font-medium text-gray-800 ">
-              Ruri
+              Olivia Brown
             </h3>
             <p class="text-xs uppercase text-gray-500 ">
-              Founder
+              Nutritionist and Wellness Expert
             </p>
           </div>
         </div>
   
         <p class="mt-3 text-gray-500 ">
-          I am an ambitious workaholic, but apart from that, pretty simple person.
+          Dedicated to promoting healthy eating habits through delicious and balanced recipes that make wellness accessible to everyone.
         </p>
   
         <!-- Social Brands -->

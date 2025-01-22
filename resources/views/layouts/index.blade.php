@@ -62,11 +62,10 @@
         <ul
           tabindex="0"
           class="text-center  menu-sm grid justify-center items-center gap-3 dropdown-content bg-base-100 rounded-box z-[1] mt-3 w-52 p-2 shadow">
-          <li class="hover:bg-yellow-400 rounded-lg"><a>Work</a></li>
-          <li class="hover:bg-yellow-400 rounded-lg"><a>Service</a></li>
-          <li class="hover:bg-yellow-400 rounded-lg"><a>About</a></li>
-          <li class="hover:bg-yellow-400 rounded-lg"><a>Careers</a></li>
-          <li class="hover:bg-yellow-400 rounded-lg"><a>Blog</a></li>
+          <li class="hover:bg-yellow-400 rounded-lg"><a href="{{ route('home') }}">Home</a></li>
+          <li class="hover:bg-yellow-400 rounded-lg"><a href="{{ route('about') }}">About Us</a></li>
+          <li class="hover:bg-yellow-400 rounded-lg"><a href="{{ route('contact') }}">Contact Us</a></li>
+          <li class="hover:bg-yellow-400 rounded-lg"><a onclick="Signin.showModal()">Community CookBook</a></li>
 
 
       </ul>
@@ -85,20 +84,18 @@
     <div id="hs-navbar-hcail" class="hs-collapse hidden overflow-hidden transition-all duration-300 basis-full grow md:block md:w-auto md:basis-auto md:order-2 md:col-span-6" aria-labelledby="hs-navbar-hcail-collapse">
       <div class="flex flex-col gap-y-4 gap-x-0 mt-5 md:flex-row md:justify-center md:items-center md:gap-y-0 md:gap-x-7 md:mt-0">
         <div>
-          <a class="relative inline-block text-black focus:outline-none before:absolute before:bottom-0.5 before:start-0 before:-z-[1] before:w-full before:h-1 before:bg-yellow-400 dark:text-black/70" href="#" aria-current="page">Work</a>
+          <a class="inline-block text-black hover:text-gray-600 focus:outline-none focus:text-gray-600 dark:hover:text-neutral-300 dark:focus:text-neutral-300" href="{{ route('home') }}" >Home</a>
         </div>
         <div>
-          <a class="inline-block text-black hover:text-gray-600 focus:outline-none focus:text-gray-600 dark:hover:text-neutral-300 dark:focus:text-neutral-300" href="#">Services</a>
+          <a class="inline-block text-black hover:text-gray-600 focus:outline-none focus:text-gray-600 dark:hover:text-neutral-300 dark:focus:text-neutral-300" href="{{ route('about') }}">About Us</a>
         </div>
         <div>
-          <a class="inline-block text-black hover:text-gray-600 focus:outline-none focus:text-gray-600 dark:hover:text-neutral-300 dark:focus:text-neutral-300" href="#">About</a>
+          <a class="inline-block text-black hover:text-gray-600 focus:outline-none focus:text-gray-600 dark:hover:text-neutral-300 dark:focus:text-neutral-300" href="{{ route('contact') }}">Contact Us</a>
         </div>
         <div>
-          <a class="inline-block text-black hover:text-gray-600 focus:outline-none focus:text-gray-600 dark:hover:text-neutral-300 dark:focus:text-neutral-300" href="#">Careers</a>
+          <a class="inline-block text-black hover:text-gray-600 focus:outline-none focus:text-gray-600 dark:hover:text-neutral-300 dark:focus:text-neutral-300" onclick="Signin.showModal()">Community CookBook</a>
         </div>
-        <div>
-          <a class="inline-block text-black hover:text-gray-600 focus:outline-none focus:text-gray-600 dark:hover:text-neutral-300 dark:focus:text-neutral-300" href="#">Blog</a>
-        </div>
+
       </div>
     </div>
     <!-- End Collapse -->

@@ -6,7 +6,7 @@
       <h1 class="block text-4xl font-bold text-black-800 ">Sign in</h1>
       <p class="mt-2 text-sm text-gray-600 dark:text-neutral-400">
         Don't have an account yet?
-        <a class="text-blue-600 decoration-2 hover:underline focus:outline-none focus:underline font-medium dark:text-blue-500" href="../examples/html/signup.html">
+        <a class="text-blue-600 decoration-2 hover:underline focus:outline-none focus:underline font-medium dark:text-blue-500" onclick="Signin.showModal()">
           Sign up here
         </a>
       </p>

@@ -10,7 +10,7 @@
           <!-- Large Top Left Image -->
           <div class="col-span-2 row-span-2">
             <img
-              src="https://i.pinimg.com/474x/1e/92/70/1e92708d4c30a0c225cd6e2a8d6aac8b.jpg"
+              src="/rec1.jpeg"
               alt="Healthy salad with egg"
               class="rounded-lg shadow-md object-cover w-full h-full hover:scale-105 transition-transform duration-300 ease-in-out"
             />
@@ -19,7 +19,7 @@
           <!-- Large Top Right Image -->
           <div class="col-span-2">
             <img
-              src="https://i.pinimg.com/474x/62/38/08/6238083cdbed4e1243890eb8f4e53867.jpg"
+              src="/rec2.jpeg"
               alt="Desserts with oranges and blackberries"
               class="rounded-lg shadow-md object-cover w-full h-full hover:scale-105 transition-transform duration-300 ease-in-out"
             />
@@ -28,7 +28,7 @@
           <!-- Small Bottom Left Image -->
           <div class="col-span-1">
             <img
-              src="https://i.pinimg.com/474x/78/c4/33/78c433eb22a7fb53e31df6150ca867b2.jpg"
+              src="/rec3.jpeg"
               alt="Refreshing drink with blueberries and lime"
               class="rounded-lg shadow-md object-cover w-full h-full hover:scale-105 transition-transform duration-300 ease-in-out"
             />
@@ -37,7 +37,7 @@
           <!-- Small Bottom Right Image -->
           <div class="col-span-1">
             <img
-              src="https://i.pinimg.com/474x/8b/c8/37/8bc8378a740f93b9dab9b28d14cd3acf.jpg"
+              src="/rec4.jpeg"
               alt="Fresh strawberries and lime slices"
               class="rounded-lg shadow-md object-cover w-full h-full hover:scale-105 transition-transform duration-300 ease-in-out"
             />
@@ -52,17 +52,17 @@
             <span class="text-yellow-500">nutritious and delicious recipes</span>
           </h1>
           <p class="text-gray-600">
-            Lorem ipsum dolor sit amet consectetur adipiscing elit sed do eiusmod tempor incididunt ut.
+            A vibrant community for food lovers, sharing recipes, culinary tips, and stories that bring people together through the joy of cooking and eating.
           </p>
           <div class="space-x-4">
             <a
-              href="#"
+              onclick="Signin.showModal()"
               class="px-6 py-3 bg-yellow-400 text-black rounded-lg shadow-md hover:bg-yellow-300"
             >
               Discover recipes
             </a>
             <a
-              href="#"
+              href="{{ route('about') }}"
               class="px-6 py-3 border border-yellow-400 text-gray-800 rounded-lg hover:bg-gray-100"
             >
               About me

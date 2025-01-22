@@ -8,11 +8,11 @@
   
         <!-- Buttons -->
         <div class="mt-7 grid gap-3 w-full sm:inline-flex">
-          <button class="bg-yellow-500 text-black border border-yellow-400 border-b-4 font-medium overflow-hidden relative px-4 py-2 rounded-md hover:brightness-150 hover:border-t-4 hover:border-b active:opacity-75 outline-none duration-300 group">
+          <a href="{{ route('about') }}" class="bg-yellow-500 text-black border border-yellow-400 border-b-4 font-medium overflow-hidden relative px-4 py-2 rounded-md hover:brightness-150 hover:border-t-4 hover:border-b active:opacity-75 outline-none duration-300 group">
   <span class="bg-yellow-400 shadow-yellow-400 absolute -top-[150%] left-0 inline-flex w-80 h-[5px] rounded-md opacity-50 group-hover:top-[150%] duration-500 shadow-[0_0_10px_10px_rgba(0,0,0,0.3)]"></span>
-  Hover Me
-</button>
-          <a class="py-3 px-4 inline-flex justify-center items-center gap-x-2 text-sm font-medium rounded-lg border border-yellow-400 bg-white text-gray-800 shadow-sm hover:bg-gray-50 focus:outline-none focus:bg-gray-50 disabled:opacity-50 disabled:pointer-events-none " href="#">
+  About us
+          </a>
+          <a onclick="Signin.showModal()" class="py-3 px-4 inline-flex justify-center items-center gap-x-2 text-sm font-medium rounded-lg border border-yellow-400 bg-white text-gray-800 shadow-sm hover:bg-gray-50 focus:outline-none focus:bg-gray-50 disabled:opacity-50 disabled:pointer-events-none " href="#">
             More Details
           </a>
         </div>
@@ -22,8 +22,7 @@
       <!-- End Col -->
   
       <div class="relative ms-4">
-        <img class=" rounded-md w-full" src="https://plus.unsplash.com/premium_photo-1705686155256-2bcbd03259c6?w=900&auto=format&fit=crop&q=60&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MXx8Zm9vZCUyMHRyYW5zcGFyZW50fGVufDB8fDB8fHww" alt="Hero Image">
-      {{-- <div class="absolute inset-0 -z-[1] bg-gradient-to-tr from-gray-200 via-white/0 to-white/0 size-full rounded-md mt-4 -mb-4 me-4 -ms-4 lg:mt-6 lg:-mb-6 lg:me-6 lg:-ms-6 dark:from-neutral-800 dark:via-neutral-900/0 dark:to-neutral-900/0"></div> --}}
+        <img class=" rounded-md w-full" src="/hero.jpeg" alt="Hero Image">
   
 
       </div>

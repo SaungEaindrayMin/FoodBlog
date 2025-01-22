@@ -12,7 +12,7 @@
         <figure>
         
           <img
-            src="https://plus.unsplash.com/premium_photo-1705609329632-6d448a1b4792?w=900&auto=format&fit=crop&q=60&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MTQxfHxmb29kJTIwdHJhbnNwYXJlbnR8ZW58MHx8MHx8fDA%3D"
+            src="/event1.jpeg"
             alt="food" class="w-[80%] h-[80%] object-cover" />
         </figure>
         <div class="card-body">
@@ -41,7 +41,7 @@
       </h1>
         <figure>
           <img
-            src="https://images.unsplash.com/photo-1464305795204-6f5bbfc7fb81?w=900&auto=format&fit=crop&q=60&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MTYzfHxmb29kJTIwdHJhbnNwYXJlbnR8ZW58MHx8MHx8fDA%3D"
+            src="/event2.jpeg"
             alt="food" class="w-[80%] h-[80%] object-cover" />
         </figure>
         <div class="card-body">
@@ -69,7 +69,7 @@
       </h1>
         <figure>
           <img
-            src="https://images.unsplash.com/photo-1504754524776-8f4f37790ca0?w=900&auto=format&fit=crop&q=60&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MTM2fHxmb29kJTIwdHJhbnNwYXJlbnR8ZW58MHx8MHx8fDA%3D"
+            src="/event3.jpeg"
             alt="food" class="w-[80%] h-[80%] object-cover" />
         </figure>
         <div class="card-body">
@@ -97,7 +97,7 @@
       </h1>
         <figure>
           <img
-            src="https://plus.unsplash.com/premium_photo-1687959301529-e4d63d33b034?w=900&auto=format&fit=crop&q=60&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8NXx8Zm9vZCUyMHRyYW5zcGFyZW50fGVufDB8fDB8fHww"
+            src="/event4.jpeg"
             alt="food" class="w-[80%] h-[80%] object-cover" />
         </figure>
         <div class="card-body">

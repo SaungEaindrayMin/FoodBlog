@@ -11,15 +11,16 @@ use App\Http\Controllers\CreateAdminController;
 // Public Routes
 Route::get('/', function () {
     return view('welcome');
-});
+})->name('home');
 
 Route::get('/about', function () {
     return view('layouts.AboutUs');
-});
+})->name('about');
 
 Route::get('/contact', function () {
     return view('layouts.contactUs');
-});
+})->name('contact');
+
 
 Route::get('/register', function () {
     return view('auth.userRegister');

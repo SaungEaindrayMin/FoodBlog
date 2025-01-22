@@ -62,4 +62,10 @@ Route::middleware(['auth'])->group(function () {
         'index' => 'profile.index',
         'store' => 'profile.store',
     ]);
+
+});
+
+
+Route::get('/educational', function () {
+    return view('layouts.User.dashboard.EducationalResource.index');
 });

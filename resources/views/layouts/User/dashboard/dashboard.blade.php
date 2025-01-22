@@ -93,9 +93,9 @@
 
 {{-- right side bar  --}}
 <div class=" relative hidden md:block col-start-11 col-end-13">
-<div class="fixed top-14 p-8 flex flex-col justify-between border-l border-slate-300  h-[95%] ">
+<div class="fixed top-14  flex flex-col justify-between border-l border-slate-300  h-[95%] ">
   {{-- for profile --}}
-  <div class="bg-[#FFFFF0]  rounded-lg shadow-lg">
+  <div class="bg-[#FFFFF0] p-8 rounded-lg shadow-lg">
   <figure>
     @if(auth()->check())
     <img 
@@ -106,9 +106,9 @@
 @endif
   </figure>
 
-  <div class="grid gap-3 mt-4 p-4">
+  <div class="grid  mt-4 p-4 ">
     @if(auth()->check())
-    <h1 class="text-sm font-semibold ">Name - {{ auth()->user()->firstname }}</h1>
+    <h1 class="text-xs font-semibold ">Name - {{ auth()->user()->firstname }}</h1>
 @else
     <h1 class="text-sm font-semibold ">No user is currently logged in.</h1>
 @endif
@@ -117,11 +117,11 @@
         </span>
     </h1>
     @if(auth()->check())
-    <h1 class="text-sm font-semibold ">Email - {{ auth()->user()->email }}</h1>
+    <h1 class="text-xs font-semibold ">Email-{{ auth()->user()->email }}</h1>
 @else
     <h1 class="text-sm font-semibold ">No user is currently logged in.</h1>
 @endif
-    <a href="" class="btn btn-sm bg-yellow-300 w-full hover:bg-yellow-200 border-0">
+    <a href="" class="btn btn-sm bg-yellow-300 w-full hover:bg-yellow-200 border-0 mt-8">
         Update Profile
     </a>
 </div>
@@ -129,7 +129,7 @@
 
 {{-- for profile  --}}
 {{-- for switch account and create new account  --}}
-<div>
+<div >
     <a href="" class="btn btn-sm w-full text-white bg-red-600 hover:bg-red-500 border-0">
       Log Out
     </a>

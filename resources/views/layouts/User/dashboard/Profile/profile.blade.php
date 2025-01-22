@@ -20,7 +20,10 @@
         </div>
       </div>
     </form>
+
   </div>
+
+
 
   <!-- Modal Popup -->
   <dialog id="share_post" class="modal">

@@ -5,15 +5,15 @@
 @endsection
 
 @section('content')
-<div class="flex justify-center items-start mx-auto w-full mt-[7%]">
+<div class="flex justify-center mx-auto md:ms-0    lg:mx-auto w-[80%] lg:w-full ">
   <!-- Main Content Wrapper -->
-  <div class="max-w-3xl w-full p-4">
+  <div class="max-w-3xl w-full ">
     <form>
       <div class="flex flex-row items-center gap-3 md:gap-2">
         <div>
           <img class="shrink-0 w-[38px] h-[38px] rounded-full" src="https://images.unsplash.com/photo-1568602471122-7832951cc4c5?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=facearea&facepad=2&w=320&h=320&q=80" alt="Avatar">
         </div>
-        <div class="w-full border border-gray-400 rounded-md">
+        <div class="w-[80%] lg:w-full  border border-gray-400 rounded-md">
           <button type="button" onclick="document.getElementById('share_post').showModal()" class="py-2 px-4 text-gray-500">
             Share Something...
           </button>
@@ -105,7 +105,7 @@
 <!-- Post Header -->
 
 @foreach ($receipes as $receipe)
-<div class="max-w-3xl mx-auto mt-[7%] p-6 rounded-lg shadow-md">
+<div class="max-w-3xl mx-auto mt-[7%] p-6 rounded-lg  border border-slate-200">
   <div class="flex justify-between items-center">
         <div class="flex items-center space-x-3 mb-4">
             <div class="w-10 h-10 bg-gray-300 rounded-full">
@@ -116,11 +116,7 @@
         
         <div class="flex gap-3 items-center">
         <p class="text-slate-600">10:00 AM</p>
-        {{-- <button>
-          <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="size-6">
-            <path stroke-linecap="round" stroke-linejoin="round" d="M3.75 6.75h16.5M3.75 12h16.5m-16.5 5.25h16.5" />
-          </svg>          
-        </button> --}}
+
 
 
         <div class="dropdown dropdown-end ">

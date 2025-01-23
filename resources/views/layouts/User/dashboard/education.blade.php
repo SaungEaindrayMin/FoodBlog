@@ -258,6 +258,51 @@
         </div>
       </div>
 
+      {{-- fourth row  --}}
+      <div class="max-w-[85rem] px-4 py-4 sm:px-2 lg:px-4 xl:py-4 mx-auto">
+        <div class="grid sm:grid-cols-1 lg:grid-cols-2 gap-6">
+          <div class="group flex flex-col h-full  border border-gray-200 shadow-sm rounded-xl ">
+                <img src="/edu7.avif" alt="Kitchen" class="w-full  object-cover rounded-t-xl">
+            <div class="p-4 md:p-6">
+              <span class="block mb-1 text-xs font-semibold uppercase text-rose-600 ">
+                How to always keep Your Kitchen clean
+              </span>
+              <p class="mt-3 text-gray-500 dark:text-neutral-500">
+                To keep your kitchen clean, start by wiping down surfaces after each use. Wash dishes promptly to avoid buildup. Clean spills immediately to prevent stains. Organize kitchen tools and utensils. Regularly sanitize countertops, sink, and appliances. Dispose of trash daily and deep clean periodically to maintain a hygienic space.
+              </p>
+            </div>
+            <div class="mt-auto flex border-t border-gray-200 ">
+              <a
+                class="w-full py-3 px-4 inline-flex justify-center items-center gap-x-2 text-sm font-medium rounded-es-xl bg-white text-gray-800 shadow-sm hover:bg-gray-50 focus:outline-none focus:bg-gray-50 disabled:opacity-50 disabled:pointer-events-none "
+                href="#"
+              >
+                Download Card
+              </a>
+            </div>
+          </div>
+          <div class="group flex flex-col h-full bg-white border border-gray-200 shadow-sm rounded-xl ">
+            <img src="/edu8.avif" alt="vegetables with freezer" class="w-full  object-cover rounded-t-xl">
+            <div class="p-4 md:p-6">
+              <span class="block mb-1 text-xs font-semibold uppercase text-rose-600 ">
+                How to store vegetables in the freezer for a long time
+              </span>
+              <p class="mt-3 text-gray-500 dark:text-neutral-500">
+                To store vegetables in the freezer, first wash, peel, and chop them. Blanch vegetables by briefly boiling or steaming, then immediately cooling them in ice water to preserve color and nutrients. Drain excess water, place in airtight bags or containers, and label with dates for long-term storage.
+              </p>
+            </div>
+            <div class="mt-auto flex border-t border-gray-200 ">
+              <a
+                class="w-full py-3 px-4 inline-flex justify-center items-center gap-x-2 text-sm font-medium rounded-es-xl bg-white text-gray-800 shadow-sm hover:bg-gray-50 focus:outline-none focus:bg-gray-50 disabled:opacity-50 disabled:pointer-events-none "
+                href="#"
+              >
+                Download Card
+              </a>
+            </div>
+          </div>
+        </div>
+      </div>
+
+
     </div>
   </div>
   

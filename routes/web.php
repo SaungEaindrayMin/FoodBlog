@@ -84,6 +84,3 @@ Route::middleware(['auth'])->group(function () {
 
 });
 
-Route::get('/educational', function () {
-    return view('layouts.User.dashboard.EducationalResource.index');
-});

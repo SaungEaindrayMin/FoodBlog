@@ -11,14 +11,7 @@ return new class extends Migration
      */
     public function up(): void
     {
-        Schema::create('contact_mails', function (Blueprint $table) {
-            $table->id();
-            $table->string('name');
-            $table->string('email');
-            $table->string('phone');
-            $table->text('details');
-            $table->timestamps();
-        });
+        Schema::dropIfExists('contact_mails');
     }
 
     /**
@@ -26,6 +19,6 @@ return new class extends Migration
      */
     public function down(): void
     {
-        Schema::dropIfExists('contact_mails');
+        // Removed the table creation code to streamline the mail handling process
     }
 };

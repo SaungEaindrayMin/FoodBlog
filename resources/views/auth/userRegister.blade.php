@@ -127,5 +127,38 @@
     <!-- End Card -->
   </div>
 
+  <div class="modal fade" id="registerModal" tabindex="-1" role="dialog" aria-labelledby="registerModalLabel" aria-hidden="true">
+    <div class="modal-dialog modal-dialog-centered modal-lg" role="document">
+        <div class="modal-content rounded-lg shadow-lg">
+            <div class="modal-header bg-gradient-to-r from-green-500 to-green-700 text-white">
+                <h5 class="modal-title font-bold text-lg" id="registerModalLabel">Create Your Account</h5>
+                <button type="button" class="close text-white" data-dismiss="modal" aria-label="Close">
+                    <span aria-hidden="true">&times;</span>
+                </button>
+            </div>
+            <div class="modal-body">
+                <form>
+                    <div class="form-group">
+                        <label for="regEmail" class="font-semibold">Email address</label>
+                        <input type="email" class="form-control border-2 border-gray-300 rounded-md shadow-sm focus:border-green-500 focus:ring focus:ring-green-200" id="regEmail" placeholder="Enter your email">
+                    </div>
+                    <div class="form-group">
+                        <label for="regPassword" class="font-semibold">Password</label>
+                        <input type="password" class="form-control border-2 border-gray-300 rounded-md shadow-sm focus:border-green-500 focus:ring focus:ring-green-200" id="regPassword" placeholder="Create a password">
+                    </div>
+                    <div class="form-group">
+                        <label for="confirmPassword" class="font-semibold">Confirm Password</label>
+                        <input type="password" class="form-control border-2 border-gray-300 rounded-md shadow-sm focus:border-green-500 focus:ring focus:ring-green-200" id="confirmPassword" placeholder="Confirm your password">
+                    </div>
+                </form>
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-secondary" data-dismiss="modal">Cancel</button>
+                <button type="button" class="btn btn-success bg-green-600 hover:bg-green-700 text-white font-bold rounded-lg px-4 py-2">Register</button>
+            </div>
+        </div>
+    </div>
+</div>
+
   
 </div>

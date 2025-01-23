@@ -1,5 +1,3 @@
-
-
 <div class="flex flex-col items-center justify-center bg-white border-2 border-[#264143] rounded-2xl shadow-[3px_4px_0px_1px_#E99F4C]">
   <div class="py-4 sm:py-7 ">
     <div class="text-center flex flex-col items-center justify-center bg-white border-2 border-[#264143] rounded-2xl shadow-[3px_4px_0px_1px_#E99F4C] p-14">
@@ -21,7 +19,6 @@
       <form action="{{route('login')}}" method="POST" class="flex flex-col items-center justify-center bg-white border-2 border-[#264143] rounded-2xl shadow-[3px_4px_0px_1px_#E99F4C] py-6">
         @csrf
 
-        <h1>hello</h1>
 
         @if (session('fail'))
         <div role="alert" class="alert alert-error w-2/3 mx-auto mt-[5%]">
@@ -77,30 +74,36 @@
   </div>
 </div>
 
-
-{{-- other version 
-
-<div class="flex flex-col items-center justify-center text-center">
-  <div class="flex flex-col items-center justify-center bg-[#EDDCD9] border-2 border-[#264143] rounded-2xl shadow-[3px_4px_0px_1px_#E99F4C] p-6">
-      <p class="text-[#264143] font-extrabold text-xl mt-5">SIGN UP</p>
-      <form action="">
-          <div class="flex flex-col items-start my-3">
-              <label class="font-semibold mb-1" for="name">Name</label>
-              <input placeholder="Enter your full name" class="outline-none border-2 border-[#264143] shadow-[3px_4px_0px_1px_#E99F4C] w-72 p-3 rounded-md text-sm focus:translate-y-1 focus:shadow-[1px_2px_0px_0px_#E99F4C]" type="text">
-          </div>
-          <div class="flex flex-col items-start my-3">
-              <label class="font-semibold mb-1" for="email">Email</label>
-              <input placeholder="Enter your email" id="email" class="outline-none border-2 border-[#264143] shadow-[3px_4px_0px_1px_#E99F4C] w-72 p-3 rounded-md text-sm focus:translate-y-1 focus:shadow-[1px_2px_0px_0px_#E99F4C]" type="email">
-          </div>
-          <div class="flex flex-col items-start my-3">
-              <label class="font-semibold mb-1" for="password">Password</label>
-              <input placeholder="Enter your password" id="password" class="outline-none border-2 border-[#264143] shadow-[3px_4px_0px_1px_#E99F4C] w-72 p-3 rounded-md text-sm focus:translate-y-1 focus:shadow-[1px_2px_0px_0px_#E99F4C]" type="password">
-          </div>
-          <div class="text-center mt-5">
-              <button class="bg-[#DE5499] shadow-[3px_3px_0px_0px_#E99F4C] text-white font-extrabold w-72 p-4 rounded-xl hover:opacity-90">SIGN UP</button>
-              <p class="mt-4">Have an Account? <a class="font-extrabold text-[#264143] hover:underline" href="">Login Here!</a></p>
-          </div>
-      </form>
-  </div>
-</div> --}}
-
+<div class="modal fade" id="loginModal" tabindex="-1" role="dialog" aria-labelledby="loginModalLabel" aria-hidden="true">
+    <div class="modal-dialog modal-dialog-centered modal-lg" role="document">
+        <div class="modal-content rounded-lg shadow-lg">
+            <div class="modal-header bg-gradient-to-r from-indigo-500 to-purple-600 text-white">
+                <h5 class="modal-title font-bold text-2xl" id="loginModalLabel">Welcome Back!</h5>
+                <button type="button" class="close text-white" data-dismiss="modal" aria-label="Close">
+                    <span aria-hidden="true">&times;</span>
+                </button>
+            </div>
+            <div class="modal-body">
+                <form action="{{route('login')}}" method="POST" class="flex flex-col items-center justify-center">
+                    @csrf
+                    <div class="form-group w-full mb-4">
+                        <label for="email" class="block text-sm font-medium text-gray-700">Email address</label>
+                        <input type="email" class="form-control border-2 border-gray-300 rounded-md shadow-sm focus:border-indigo-500 focus:ring focus:ring-indigo-200 w-full p-3" id="email" placeholder="Enter your email" required>
+                    </div>
+                    <div class="form-group w-full mb-4">
+                        <label for="password" class="block text-sm font-medium text-gray-700">Password</label>
+                        <input type="password" class="form-control border-2 border-gray-300 rounded-md shadow-sm focus:border-indigo-500 focus:ring focus:ring-indigo-200 w-full p-3" id="password" placeholder="Enter your password" required>
+                    </div>
+                    <div class="form-group form-check mb-4">
+                        <input type="checkbox" class="form-check-input" id="remember">
+                        <label class="form-check-label" for="remember">Remember me</label>
+                    </div>
+                    <button type="submit" class="btn btn-primary bg-indigo-600 hover:bg-indigo-700 text-white font-bold rounded-lg px-4 py-2 w-full">Login</button>
+                </form>
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-secondary" data-dismiss="modal">Cancel</button>
+            </div>
+        </div>
+    </div>
+</div>

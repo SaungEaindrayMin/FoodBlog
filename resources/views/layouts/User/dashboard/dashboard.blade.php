@@ -240,9 +240,12 @@
   
   
   <div >
-      <a href="" class="btn btn-sm w-full text-white bg-red-600 hover:bg-red-500 border-0">
-        Log Out
-      </a>
+      <form action="{{ route('logout') }}" method="POST" class="w-full">
+        @csrf
+        <button type="submit" class="btn btn-sm w-full text-white bg-red-600 hover:bg-red-500 border-0">
+            Log Out
+        </button>
+    </form>
   </div>
   </div> 
   </div>

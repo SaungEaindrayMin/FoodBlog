@@ -11,14 +11,15 @@ return new class extends Migration
      */
     public function up(): void
     {
-        Schema::table('receipes', function (Blueprint $table) {
-            // Add new columns if they don't exist
-            if (!Schema::hasColumn('receipes', 'ingredients')) {
-                $table->json('ingredients')->after('paragraph');
-            }
-            if (!Schema::hasColumn('receipes', 'instructions')) {
-                $table->json('instructions')->after('ingredients');
-            }
+        Schema::create('recipes', function (Blueprint $table) {
+            $table->id();
+            $table->foreignId('category_id')->after('id')->constrained()->onDelete('cascade');
+            $table->foreignId('user_id')->after('category_id')->constrained('users')->onDelete('cascade');
+            $table->string('title');
+            $table->text('paragraph');
+            $table->json('ingredients');
+            $table->json('instructions');
+            $table->timestamps();
         });
     }
 
@@ -27,8 +28,6 @@ return new class extends Migration
      */
     public function down(): void
     {
-        Schema::table('receipes', function (Blueprint $table) {
-            $table->dropColumn(['ingredients', 'instructions']);
-        });
+        Schema::dropIfExists('recipes');
     }
 };

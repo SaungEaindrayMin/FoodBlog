@@ -88,6 +88,3 @@ Route::middleware(['auth'])->group(function () {
     Route::get('/recipe/{id}', [ReceipesController::class, 'show'])->name('recipe.detail');
 });
 
-Route::get('/educational', function () {
-    return view('layouts.User.dashboard.EducationalResource.index');
-});

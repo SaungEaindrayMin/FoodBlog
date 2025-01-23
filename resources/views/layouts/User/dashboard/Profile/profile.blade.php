@@ -68,35 +68,43 @@
             required></textarea>
 
         <!-- Dynamic Ingredients -->
-        <div id="ingredients-container" class="space-y-2">
-            <div class="flex items-center gap-2">
-                <input type="text" 
-                    name="ingredients[]" 
-                    class="w-full p-2 text-gray-700 border rounded-md focus:outline-none focus:ring-2 focus:ring-blue-500"
-                    placeholder="Add Ingredient"
-                    required>
-                <button type="button" onclick="addIngredient()" class="btn btn-circle btn-sm bg-blue-500 text-white">
-                    <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5" viewBox="0 0 20 20" fill="currentColor">
-                        <path fill-rule="evenodd" d="M10 5a1 1 0 011 1v3h3a1 1 0 110 2h-3v3a1 1 0 11-2 0v-3H6a1 1 0 110-2h3V6a1 1 0 011-1z" clip-rule="evenodd" />
-                    </svg>
-                </button>
+        <div class="space-y-2">
+            <label class="font-semibold text-gray-700">Ingredients</label>
+            <div id="ingredients-container">
+                <div class="flex items-center gap-2 mb-2">
+                    <input type="text" 
+                        name="ingredients[]" 
+                        class="w-full p-2 text-gray-700 border rounded-md focus:outline-none focus:ring-2 focus:ring-blue-500"
+                        placeholder="Add Ingredient"
+                        required>
+                </div>
             </div>
+            <button type="button" onclick="addIngredient()" class="btn btn-sm bg-blue-500 text-white hover:bg-blue-600">
+                <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5 mr-1" viewBox="0 0 20 20" fill="currentColor">
+                    <path fill-rule="evenodd" d="M10 5a1 1 0 011 1v3h3a1 1 0 110 2h-3v3a1 1 0 11-2 0v-3H6a1 1 0 110-2h3V6a1 1 0 011-1z" clip-rule="evenodd" />
+                </svg>
+                Add Ingredient
+            </button>
         </div>
 
         <!-- Dynamic Instructions -->
-        <div id="instructions-container" class="space-y-2">
-            <div class="flex items-center gap-2">
-                <input type="text" 
-                    name="instructions[]" 
-                    class="w-full p-2 text-gray-700 border rounded-md focus:outline-none focus:ring-2 focus:ring-blue-500"
-                    placeholder="Add Instruction Step"
-                    required>
-                <button type="button" onclick="addInstruction()" class="btn btn-circle btn-sm bg-blue-500 text-white">
-                    <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5" viewBox="0 0 20 20" fill="currentColor">
-                        <path fill-rule="evenodd" d="M10 5a1 1 0 011 1v3h3a1 1 0 110 2h-3v3a1 1 0 11-2 0v-3H6a1 1 0 110-2h3V6a1 1 0 011-1z" clip-rule="evenodd" />
-                    </svg>
-                </button>
+        <div class="space-y-2">
+            <label class="font-semibold text-gray-700">Instructions</label>
+            <div id="instructions-container">
+                <div class="flex items-center gap-2 mb-2">
+                    <input type="text" 
+                        name="instructions[]" 
+                        class="w-full p-2 text-gray-700 border rounded-md focus:outline-none focus:ring-2 focus:ring-blue-500"
+                        placeholder="Add Instruction Step"
+                        required>
+                </div>
             </div>
+            <button type="button" onclick="addInstruction()" class="btn btn-sm bg-blue-500 text-white hover:bg-blue-600">
+                <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5 mr-1" viewBox="0 0 20 20" fill="currentColor">
+                    <path fill-rule="evenodd" d="M10 5a1 1 0 011 1v3h3a1 1 0 110 2h-3v3a1 1 0 11-2 0v-3H6a1 1 0 110-2h3V6a1 1 0 011-1z" clip-rule="evenodd" />
+                </svg>
+                Add Instruction
+            </button>
         </div>
     
         <!-- File Upload Section -->
@@ -185,11 +193,35 @@
 
   {{-- Post Title  --}}
     <div class="grid gap-4">
-      <h1 class="font-bold text-xl">{{ $receipe->title }}</h1>
-      <p class="text-gray-600 line-clamp-3">{{ $receipe->paragraph }}</p>
-      <div class="flex gap-2  mx-auto mt-2">
+      <a href="{{ route('recipe.detail', $receipe->id) }}" class="hover:text-yellow-500">
+        <h1 class="font-bold text-xl">{{ $receipe->title }}</h1>
+      </a>
+      <p class="text-gray-600">{{ $receipe->paragraph }}</p>
+
+      <!-- Ingredients Section -->
+      <div class="mt-4">
+        <h2 class="font-semibold text-lg mb-2">Ingredients:</h2>
+        <ul class="list-disc list-inside space-y-1">
+          @foreach($receipe->ingredients ?? [] as $ingredient)
+            <li class="text-gray-700">{{ $ingredient }}</li>
+          @endforeach
+        </ul>
+      </div>
+
+      <!-- Instructions Section -->
+      <div class="mt-4">
+        <h2 class="font-semibold text-lg mb-2">Instructions:</h2>
+        <ol class="list-decimal list-inside space-y-2">
+          @foreach($receipe->instructions ?? [] as $instruction)
+            <li class="text-gray-700">{{ $instruction }}</li>
+          @endforeach
+        </ol>
+      </div>
+
+      <!-- Media Section -->
+      <div class="flex gap-2 mx-auto mt-4">
         @if ($receipe->image)
-          <img src="{{ asset($receipe->image) }}" class="rounded-md w-3/6 ">
+          <img src="{{ asset($receipe->image) }}" class="rounded-md w-3/6 object-cover">
         @endif
         @if ($receipe->video)
           <video controls class="w-3/6">
@@ -197,7 +229,6 @@
           </video>
         @endif
       </div>
-
     </div>
   </div>
   @endforeach
@@ -206,42 +237,82 @@
 
 @endsection
 
+@section('scripts')
 <script>
+document.addEventListener('DOMContentLoaded', function() {
+    // Initialize containers
+    window.ingredientCount = 1;
+    window.instructionCount = 1;
+});
+
 function addIngredient() {
     const container = document.getElementById('ingredients-container');
     const newInput = document.createElement('div');
-    newInput.className = 'flex items-center gap-2';
+    newInput.className = 'flex items-center gap-2 mb-2';
     newInput.innerHTML = `
         <input type="text" 
             name="ingredients[]" 
             class="w-full p-2 text-gray-700 border rounded-md focus:outline-none focus:ring-2 focus:ring-blue-500"
             placeholder="Add Ingredient"
             required>
-        <button type="button" onclick="this.parentElement.remove()" class="btn btn-circle btn-sm bg-red-500 text-white">
+        <button type="button" onclick="removeElement(this)" class="btn btn-circle btn-sm bg-red-500 text-white hover:bg-red-600">
             <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5" viewBox="0 0 20 20" fill="currentColor">
                 <path fill-rule="evenodd" d="M4.293 4.293a1 1 0 011.414 0L10 8.586l4.293-4.293a1 1 0 111.414 1.414L11.414 10l4.293 4.293a1 1 0 01-1.414 1.414L10 11.414l-4.293 4.293a1 1 0 01-1.414-1.414L8.586 10 4.293 5.707a1 1 0 010-1.414z" clip-rule="evenodd" />
             </svg>
         </button>
     `;
     container.appendChild(newInput);
+    window.ingredientCount++;
 }
 
 function addInstruction() {
     const container = document.getElementById('instructions-container');
     const newInput = document.createElement('div');
-    newInput.className = 'flex items-center gap-2';
+    newInput.className = 'flex items-center gap-2 mb-2';
     newInput.innerHTML = `
         <input type="text" 
             name="instructions[]" 
             class="w-full p-2 text-gray-700 border rounded-md focus:outline-none focus:ring-2 focus:ring-blue-500"
             placeholder="Add Instruction Step"
             required>
-        <button type="button" onclick="this.parentElement.remove()" class="btn btn-circle btn-sm bg-red-500 text-white">
+        <button type="button" onclick="removeElement(this)" class="btn btn-circle btn-sm bg-red-500 text-white hover:bg-red-600">
             <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5" viewBox="0 0 20 20" fill="currentColor">
                 <path fill-rule="evenodd" d="M4.293 4.293a1 1 0 011.414 0L10 8.586l4.293-4.293a1 1 0 111.414 1.414L11.414 10l4.293 4.293a1 1 0 01-1.414 1.414L10 11.414l-4.293 4.293a1 1 0 01-1.414-1.414L8.586 10 4.293 5.707a1 1 0 010-1.414z" clip-rule="evenodd" />
             </svg>
         </button>
     `;
     container.appendChild(newInput);
+    window.instructionCount++;
 }
+
+function removeElement(button) {
+    const parentContainer = button.closest('div').parentElement;
+    const elementType = button.closest('div').querySelector('input').name.includes('ingredients') ? 'ingredient' : 'instruction';
+    
+    if ((elementType === 'ingredient' && window.ingredientCount > 1) || 
+        (elementType === 'instruction' && window.instructionCount > 1)) {
+        button.closest('div').remove();
+        if (elementType === 'ingredient') {
+            window.ingredientCount--;
+        } else {
+            window.instructionCount--;
+        }
+    }
+}
+
+// Add file preview handlers
+document.getElementById('image').addEventListener('change', function(e) {
+    const container = document.getElementById('file-preview-img-container');
+    const preview = document.getElementById('file-preview-img');
+    container.classList.remove('hidden');
+    preview.src = URL.createObjectURL(e.target.files[0]);
+});
+
+document.getElementById('video').addEventListener('change', function(e) {
+    const container = document.getElementById('file-preview-video-container');
+    const preview = document.getElementById('file-preview-video');
+    container.classList.remove('hidden');
+    preview.src = URL.createObjectURL(e.target.files[0]);
+});
 </script>
+@endsection

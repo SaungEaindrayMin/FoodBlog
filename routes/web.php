@@ -1,13 +1,14 @@
 <?php
 
 use Illuminate\Support\Facades\Route;
-use App\Http\Controllers\authController;
+use App\Http\Controllers\AuthController;
 use App\Http\Controllers\AdminController;
 use App\Http\Controllers\AdminReceipesController;
 use App\Http\Controllers\ReceipesController;
 use App\Http\Controllers\UserController;
 use App\Http\Controllers\CreateAdminController;
 use App\Http\Controllers\Admin\CategoryController;
+use App\Http\Controllers\MailController;
 
 // Public Routes
 Route::get('/', function () {
@@ -22,6 +23,7 @@ Route::get('/contact', function () {
     return view('layouts.contactUs');
 })->name('contact');
 
+Route::post('/contact', [MailController::class, 'store'])->name('contact.store');
 
 Route::get('/register', function () {
     return view('auth.userRegister');
@@ -32,8 +34,8 @@ Route::get('/login', function () {
 })->name('login.form');
 
 // Authentication Routes
-Route::post('/register', [authController::class, 'register'])->name('register');
-Route::post('/login', [authController::class, 'login'])->name('login');
+Route::post('/register', [AuthController::class, 'register'])->name('register');
+Route::post('/login', [AuthController::class, 'login'])->name('login');
 
 // Admin Dashboard Routes
 Route::get('/admin/dashboard/home', function () {
@@ -75,13 +77,15 @@ Route::prefix('user/dashboard')->middleware(['auth'])->group(function () {
 
 // Authenticated User Routes
 Route::middleware(['auth'])->group(function () {
-    Route::get('/logout', [authController::class, 'logout'])->name('logout');
+    Route::get('/logout', [AuthController::class, 'logout'])->name('logout');
+    Route::post('/logout', [AuthController::class, 'logout'])->name('logout');
 
     Route::resource('/user/dashboard/profile', ReceipesController::class)->names([
         'index' => 'profile.index',
         'store' => 'profile.store',
     ]);
 
+    Route::get('/recipe/{id}', [ReceipesController::class, 'show'])->name('recipe.detail');
 });
 
 Route::get('/educational', function () {

@@ -21,23 +21,26 @@ class ReceipesController extends Controller
 
     public function store(Request $request)
     {
-
-        // dd($request->all());
-
         try {
             $validated = $request->validate([
                 'title' => 'required|string|max:255',
                 'paragraph' => 'required|string',
-                'ingredient' => 'required|string',
-                'image' => 'nullable',
-                'video' => 'nullable',
+                'ingredients' => 'required|array',
+                'ingredients.*' => 'required|string',
+                'instructions' => 'required|array',
+                'instructions.*' => 'required|string',
+                'category_id' => 'required|exists:categories,id',
+                'image' => 'nullable|image|mimes:jpeg,png,jpg,gif|max:2048',
+                'video' => 'nullable|mimes:mp4,mov,avi|max:20480',
             ]);
 
             // If validation passes
             $recipe = new Receipes();
             $recipe->title = $validated['title'];
             $recipe->paragraph = $validated['paragraph'];
-            $recipe->ingredient = $validated['ingredient'];
+            $recipe->category_id = $validated['category_id'];
+            $recipe->ingredients = $validated['ingredients']; 
+            $recipe->instructions = $validated['instructions']; 
     
             if ($request->hasFile('image')) {
                 $imageName = time().'.'.$request->image->extension();
@@ -49,21 +52,16 @@ class ReceipesController extends Controller
                 $videoName = time().'.'.$request->video->extension();
                 $request->video->move(public_path('images/videos'), $videoName);
                 $recipe->video = 'images/videos/'.$videoName;
-                
-                // Debug statements
-                Log::info('Video Upload Debug', [
-                    'hasFile' => $request->hasFile('video'),
-                    'videoName' => $videoName,
-                    'videoPath' => public_path('images/videos/' . $videoName),
-                    'videoExists' => file_exists(public_path('images/videos/' . $videoName))
-                ]);
             }
             
             $recipe->save();
             return redirect()->route('profile.index')->with('success', 'Recipe created successfully!');
     
-        } catch (\Illuminate\Validation\ValidationException $e) {
-            return redirect()->back()->withErrors($e->validator->errors())->withInput();
+        } catch (\Exception $e) {
+            \Log::error('Recipe creation error: ' . $e->getMessage());
+            return redirect()->back()
+                ->withErrors(['error' => 'Failed to create recipe. Please try again.'])
+                ->withInput();
         }
     }
     
@@ -84,6 +82,12 @@ class ReceipesController extends Controller
         $receipe->delete();
 
         return redirect()->route('profile.index')->with('success', 'Recipe deleted successfully.');
+    }
+
+    public function show($id)
+    {
+        $recipe = Receipes::findOrFail($id);
+        return view('layouts.User.dashboard.Profile.recipe-detail', compact('recipe'));
     }
 
     public function manage(Request $request)

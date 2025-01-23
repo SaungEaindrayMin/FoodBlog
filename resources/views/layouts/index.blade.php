@@ -41,6 +41,14 @@
   Sign up
 </button>
 @endguest
+@auth()
+<form action="{{ route('logout') }}" method="POST" style="display: inline;">
+    @csrf
+    <button type="submit" class="btn py-2 px-3 inline-flex items-center gap-x-2 text-sm font-medium rounded-xl border border-transparent bg-red-400 text-white hover:bg-red-300 focus:outline-none focus:bg-red-500 transition disabled:opacity-50 disabled:pointer-events-none">
+        Logout
+    </button>
+</form>
+@endauth
 
       {{-- hambuger menu  --}}
       <div class="dropdown dropdown-end md:hidden">

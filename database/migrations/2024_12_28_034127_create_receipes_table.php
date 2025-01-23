@@ -18,8 +18,6 @@ return new class extends Migration
             $table->Text('ingredient');
             $table->Text('image')->nullable();
             $table->Text('video')->nullable();
-            $table->unsignedBigInteger('user_id');
-            $table->foreignId('user_id')->constrained()->onDelete('cascade');
             $table->timestamps();
         });
     }

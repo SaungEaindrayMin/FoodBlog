@@ -22,9 +22,11 @@ class CreateAdminController extends Controller
                 'firstname' => ['required'],
                 'lastname' => ['required'],
                 'email' => ['required', 'email', 'unique:users,email'],
-                'password' => ['required','confirmed', 'min:6'],
+                'password' => ['required','confirmed'],
                 'role' => 'required|in:user,admin',
             ]);
+
+
 
             // Handle image upload
             $imageName = time().'.'.$request->image->extension();
@@ -39,9 +41,12 @@ class CreateAdminController extends Controller
             $user->role = $request->role;
             $user->save();
 
-            return redirect()->route('manageadmin')->with('success', 'Admin registration successful!');
+
+            return redirect()->route('manageuser')->with('success', 'Admin registration successful!');
         } catch (\Exception $e) {
             // Redirect back with error
+            dd($e);
+
             return back()->withErrors(['error' => $e->getMessage()])->withInput();
         }
     }

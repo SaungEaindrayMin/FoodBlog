@@ -16,7 +16,7 @@
       <div class="py-3 flex items-center text-xs text-gray-400 uppercase before:flex-1 before:border-t before:border-gray-200 before:me-6 after:flex-1 after:border-t after:border-gray-200 after:ms-6 dark:text-neutral-500 dark:before:border-neutral-600 dark:after:border-neutral-600">Or</div>
 
       <!-- Form -->
-      <form action="{{route('login')}}" method="POST" class="flex flex-col items-center justify-center bg-white border-2 border-[#264143] rounded-2xl shadow-[3px_4px_0px_1px_#E99F4C] py-6">
+      <form action="{{route('login')}}" method="POST" onsubmit="return handleSubmit()" class="flex flex-col items-center justify-center bg-white border-2 border-[#264143] rounded-2xl shadow-[3px_4px_0px_1px_#E99F4C] py-6">
         @csrf
 
 
@@ -73,6 +73,27 @@
     </div>
   </div>
 </div>
+
+@if(session('error_code') === 'login_attempt')
+    <div id="errorModal" class="fixed inset-0 flex items-center justify-center z-50">
+        <div class="bg-white rounded-lg shadow-lg p-6">
+            <h2 class="text-lg font-semibold text-red-600">Login Error</h2>
+            <p class="mt-2 text-gray-600">{{ session('email') }}</p>
+            <button onclick="document.getElementById('errorModal').style.display='none'" class="mt-4 bg-red-500 text-white px-4 py-2 rounded">Close</button>
+        </div>
+    </div>
+@endif
+
+<script>
+function handleSubmit() {
+    const emailError = '{{ session('email') }}';
+    if (emailError) {
+        document.getElementById('errorModal').style.display = 'flex';
+        return false; // Prevent form submission
+    }
+    return true; // Allow form submission
+}
+</script>
 
 <div class="modal fade" id="loginModal" tabindex="-1" role="dialog" aria-labelledby="loginModalLabel" aria-hidden="true">
     <div class="modal-dialog modal-dialog-centered modal-lg" role="document">

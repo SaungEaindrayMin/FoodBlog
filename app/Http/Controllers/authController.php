@@ -63,7 +63,7 @@ class AuthController extends Controller
                 
                 return back()->withErrors([
                     'email' => "Too many failed attempts. Please wait {$minutes} minutes and {$seconds} seconds before trying again."
-                ]);
+                ])->with('error_code', 'login_attempt');
             }
 
             if (Auth::attempt($request->only('email', 'password'))) {
@@ -111,7 +111,7 @@ class AuthController extends Controller
 
             return back()->withErrors([
                 'email' => $message
-            ]);
+            ])->with('error_code', 'login_attempt');
 
         } catch (Exception $e) {
             return back()->with('fail', 'Login failed');

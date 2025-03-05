@@ -41,6 +41,7 @@ class ReceipesController extends Controller
             $recipe->category_id = $validated['category_id'];
             $recipe->ingredients = $validated['ingredients']; 
             $recipe->instructions = $validated['instructions']; 
+            $recipe->user_id = auth()->id(); // Add the authenticated user's ID
     
             if ($request->hasFile('image')) {
                 $imageName = time().'.'.$request->image->extension();
@@ -58,6 +59,7 @@ class ReceipesController extends Controller
             return redirect()->route('profile.index')->with('success', 'Recipe created successfully!');
     
         } catch (\Exception $e) {
+            dd ($e);
             \Log::error('Recipe creation error: ' . $e->getMessage());
             return redirect()->back()
                 ->withErrors(['error' => 'Failed to create recipe. Please try again.'])

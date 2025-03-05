@@ -13,8 +13,8 @@ class CreateCategoryReceipeTable extends Migration
     {
         Schema::create('category_receipe', function (Blueprint $table) {
             $table->foreignId('category_id')->constrained()->onDelete('cascade');
-            $table->foreignId('recipe_id')->constrained('recipes')->onDelete('cascade');
-            $table->primary(['category_id', 'recipe_id']);
+            $table->foreignId('receipe_id')->constrained('receipes')->onDelete('cascade');
+            $table->primary(['category_id', 'receipe_id']);
         });
     }
 

@@ -33,6 +33,20 @@ Route::get('/login', function () {
     return view('auth.userLogin');
 })->name('login.form');
 
+Route::get('/privacy-policy', function () {
+    return view('layouts.privacy-policy');
+})->name('privacy.policy');
+
+Route::get('/privacy', function () {
+    return view('privacy-policy');
+})->name('privacy');
+
+Route::get('/recipes-collection', function () {
+    return view('layouts.User.dashboard.recipes-collection');
+})->name('recipes.collection');
+
+Route::get('/recipes-collection/{category}', [ReceipesController::class, 'recipesCollection'])->name('recipes.collection.category');
+
 // Authentication Routes
 Route::post('/register', [AuthController::class, 'register'])->name('register');
 Route::post('/login', [AuthController::class, 'login'])->name('login');
@@ -87,4 +101,3 @@ Route::middleware(['auth'])->group(function () {
 
     Route::get('/recipe/{id}', [ReceipesController::class, 'show'])->name('recipe.detail');
 });
-

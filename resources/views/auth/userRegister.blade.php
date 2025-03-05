@@ -2,7 +2,7 @@
   <div class="max-w-xl mx-auto">
     <div class="text-center">
       <h1 class="text-3xl font-bold sm:text-4xl text-yellow-500">
-        Register Here!
+        Join Now
       </h1>
     </div>
   </div>

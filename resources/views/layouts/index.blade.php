@@ -74,8 +74,7 @@
           <li class="hover:bg-yellow-400 rounded-lg"><a href="{{ route('about') }}">About Us</a></li>
           <li class="hover:bg-yellow-400 rounded-lg"><a href="{{ route('contact') }}">Contact Us</a></li>
           <li class="hover:bg-yellow-400 rounded-lg"><a onclick="Signin.showModal()">Community CookBook</a></li>
-
-
+          <li class="hover:bg-yellow-400 rounded-lg"><a href="{{ route('privacy.policy') }}">Privacy Policy</a></li>
       </ul>
     </div>
   </div>
@@ -102,6 +101,9 @@
         </div>
         <div>
           <a class="inline-block text-black hover:text-gray-600 focus:outline-none focus:text-gray-600 dark:hover:text-neutral-300 dark:focus:text-neutral-300" onclick="Signin.showModal()">Community CookBook</a>
+        </div>
+        <div>
+          <a class="inline-block text-black hover:text-gray-600 focus:outline-none focus:text-gray-600 dark:hover:text-neutral-300 dark:focus:text-neutral-300" href="{{ route('privacy.policy') }}">Privacy Policy</a>
         </div>
 
       </div>

@@ -25,10 +25,15 @@ class UserController extends Controller
     }
 
     // Admin methods
-    public function index()
+    public function index(Request $request)
     {
-        $users = User::all();
-        return view('layouts.Admin.dashboard.admin.manage', compact('users'));
+        $searchTerm = $request->input('search');
+        $users = User::when($searchTerm, function ($query, $searchTerm) {
+            return $query->where('name', 'like', '%'.$searchTerm.'%')
+                         ->orWhere('email', 'like', '%'.$searchTerm.'%');
+        })->get();
+
+        return view('layouts.Admin.dashboard.user.manage', compact('users', 'searchTerm'));
     }
 
     public function destroy($id)

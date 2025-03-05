@@ -1,7 +1,7 @@
     <!-- Contact Us -->
-    <div class=" max-w-[85rem] mx-auto px-4 sm:px-6 lg:px-8 mt-[5%] ">
+    <div class=" max-w-[85rem] mx-auto px-4 sm:px-6 lg:px-8 mt-[10%] ">
         <div class="text-center">
-          <h1 class="text-3xl font-bold text-gray-800 sm:text-4xl dark:text-white">
+          <h1 class="text-3xl font-bold text-gray-800 sm:text-4xl dark:text-white mt-24">
             Contact us
           </h1>
           <p class="mt-1 text-gray-600 dark:text-neutral-400">

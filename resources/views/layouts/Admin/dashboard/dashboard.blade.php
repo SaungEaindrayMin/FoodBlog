@@ -22,7 +22,7 @@
       </div>
   
       <div class="nav-right flex items-center gap-4">
-          <img src="https://images.unsplash.com/photo-1522075469751-3a6694fb2f61?w=900&auto=format&fit=crop&q=60&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8M3x8cHJvZmlsZXxlbnwwfHwwfHx8MA%3D%3D" alt="" class="w-8 h-8 rounded-full">
+          <img src="/{{ auth()->user()->image }}" alt="" class="w-8 h-8 rounded-full object-cover">
       </div>
     </div>
   </nav>

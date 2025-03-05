@@ -173,7 +173,7 @@
         <div class="grid sm:grid-cols-1 lg:grid-cols-2 gap-6">
           <div class="group flex flex-col h-full border border-gray-200 shadow-sm rounded-xl">
             <video width="100%" height="250" controls class="rounded-t-xl">
-              <source src="your_video.mp4" type="video/mp4">
+              <source src="https://videos.pexels.com/video-files/5866131/5866131-uhd_2560_1440_25fps.mp4" type="video/mp4">
               Your browser does not support the video tag.
             </video>
             <div class="p-4 md:p-6">
@@ -185,7 +185,7 @@
               </p>
             </div>
             <div class="mt-auto flex border-t border-gray-200">
-              <a class="w-full py-3 px-4 inline-flex justify-center items-center gap-x-2 text-sm font-medium rounded-es-xl bg-white text-gray-800 shadow-sm hover:bg-gray-50 focus:outline-none focus:bg-gray-50 disabled:opacity-50 disabled:pointer-events-none" href="#">
+              <a type="file" href="https://videos.pexels.com/video-files/5866131/5866131-uhd_2560_1440_25fps.mp4" class="w-full py-3 px-4 inline-flex justify-center items-center gap-x-2 text-sm font-medium rounded-es-xl bg-white text-gray-800 shadow-sm hover:bg-gray-50 focus:outline-none focus:bg-gray-50 disabled:opacity-50 disabled:pointer-events-none" href="#">
                 Download Card
               </a>
             </div>
@@ -259,7 +259,7 @@
         <div class="grid sm:grid-cols-1 lg:grid-cols-2 gap-6">
           <div class="group flex flex-col h-full border border-gray-200 shadow-sm rounded-xl">
             <video width="100%" height="250" controls class="rounded-t-xl">
-              <source src="your_video.mp4" type="video/mp4">
+              <source src="https://videos.pexels.com/video-files/8851749/8851749-uhd_2732_1440_24fps.mp4" type="video/mp4">
               Your browser does not support the video tag.
             </video>
             <div class="p-4 md:p-6">
@@ -271,14 +271,14 @@
               </p>
             </div>
             <div class="mt-auto flex border-t border-gray-200">
-              <a class="w-full py-3 px-4 inline-flex justify-center items-center gap-x-2 text-sm font-medium rounded-es-xl bg-white text-gray-800 shadow-sm hover:bg-gray-50 focus:outline-none focus:bg-gray-50 disabled:opacity-50 disabled:pointer-events-none" href="#">
+              <a type="file" href="https://videos.pexels.com/video-files/8851749/8851749-uhd_2732_1440_24fps.mp4" class="w-full py-3 px-4 inline-flex justify-center items-center gap-x-2 text-sm font-medium rounded-es-xl bg-white text-gray-800 shadow-sm hover:bg-gray-50 focus:outline-none focus:bg-gray-50 disabled:opacity-50 disabled:pointer-events-none" href="#">
                 Download Card
               </a>
             </div>
           </div>
           <div class="group flex flex-col h-full bg-white border border-gray-200 shadow-sm rounded-xl">
             <video width="100%" height="250" controls class="rounded-t-xl">
-                <source src="your_video.mp4" type="video/mp4">
+                <source src="https://videos.pexels.com/video-files/6803195/6803195-uhd_2732_1440_25fps.mp4" type="video/mp4">
                 Your browser does not support the video tag.
               </video>
             <div class="p-4 md:p-6">
@@ -290,7 +290,7 @@
               </p>
             </div>
             <div class="mt-auto flex border-t border-gray-200">
-              <a class="w-full py-3 px-4 inline-flex justify-center items-center gap-x-2 text-sm font-medium rounded-es-xl bg-white text-gray-800 shadow-sm hover:bg-gray-50 focus:outline-none focus:bg-gray-50 disabled:opacity-50 disabled:pointer-events-none" href="#">
+              <a type="file" href="https://videos.pexels.com/video-files/6803195/6803195-uhd_2732_1440_25fps.mp4" class="w-full py-3 px-4 inline-flex justify-center items-center gap-x-2 text-sm font-medium rounded-es-xl bg-white text-gray-800 shadow-sm hover:bg-gray-50 focus:outline-none focus:bg-gray-50 disabled:opacity-50 disabled:pointer-events-none" href="#">
                 Download Card
               </a>
             </div>

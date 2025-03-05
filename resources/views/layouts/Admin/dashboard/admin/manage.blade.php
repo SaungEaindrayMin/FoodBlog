@@ -10,36 +10,12 @@
     <div class="p-3 space-y-8">
 
         <div class="flex flex-col md:flex-row justify-between items-center">
-            <h1 class="text-2xl font-semibold mb-6 md:mb-0">Manage Admins</h1>
+            <h1 class="text-2xl font-semibold mb-6 md:mb-0">Manage admins</h1>
 
-            <div class="flex gap-x-3 gap-y-2 md:gap-y-0">
-                <form action="{{ route('manageadmin') }}" method="GET" class="relative border border-slate-400 rounded-lg w-full md:w-auto">
-                    <div class="absolute inset-y-0 start-0 flex items-center pointer-events-none z-20 ps-3.5">
-                        <svg class="shrink-0 size-4 text-gray-400" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="11" cy="11" r="8"/><path d="m21 21-4.3-4.3"/></svg>
-                    </div>
-                    <input type="text" name="search" value="{{ $searchTerm }}" class="py-2 ps-10 pe-16 block w-full bg-white border-slate-200 rounded-lg text-sm focus:outline-none" placeholder="Search by name or email">
-                </form>
-
-
-                <a class="flex gap-x-2 bg-[#FFFFF0] p-2 rounded-lg shadow-lg text-sm justify-center items-center  ">
-                    <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.8" stroke="currentColor" class="size-5">
-                        <path stroke-linecap="round" stroke-linejoin="round" d="M12 9v6m3-3H9m12 0a9 9 0 1 1-18 0 9 9 0 0 1 18 0Z" />
-                    </svg>
-                    <p class="hidden lg:block">New Admin</p>                  
-                </a>
-            </div>
         </div>
 
         <div class="overflow-x-auto">
-            @if($admins->isEmpty())
-                <div class="text-center py-4 text-gray-500">
-                    @if($searchTerm)
-                        No admin users found matching "{{ $searchTerm }}".
-                    @else
-                        No admin users found.
-                    @endif
-                </div>
-            @else
+        
                 <table class="min-w-full divide-y divide-gray-200 border">
                     <thead class="bg-[#FFFFF0]">
                         <tr>
@@ -70,6 +46,11 @@
                             </th>
                             <th scope="col" class="px-6 py-3 text-start">
                                 <div class="flex items-center gap-x-2">
+                                    <span class="text-xs font-semibold uppercase tracking-wide text-black ">Role</span>
+                                </div>
+                            </th>
+                            <th scope="col" class="px-6 py-3 text-start">
+                                <div class="flex items-center gap-x-2">
                                     <span class="text-xs font-semibold uppercase tracking-wide text-black ">Action</span>
                                 </div>
                             </th>
@@ -95,6 +76,9 @@
                             </td>
                             <td class="px-6 py-4 whitespace-nowrap text-sm text-gray-500">
                                 {{ $admin->email }}
+                            </td>
+                            <td class="px-6 py-4 whitespace-nowrap text-sm text-gray-500">
+                                {{ $admin->role }}
                             </td>
                             <td class="px-6 py-4 whitespace-nowrap text-sm font-medium">
                                 <div class="flex gap-x-3">
@@ -161,6 +145,14 @@
                                                     </div>
                                                 </div>
 
+                                                <div>
+                                                    <label class="block text-sm font-medium text-gray-700">Role</label>
+                                                    <select name="role" class="mt-1 block w-full rounded-md border-gray-300 shadow-sm focus:border-blue-500 focus:ring-blue-500">
+                                                        <option value="admin" {{ $admin->role == 'admin' ? 'selected' : '' }}>Admin</option>
+                                                        <option value="superadmin" {{ $admin->role == 'superadmin' ? 'selected' : '' }}>Super Admin</option>
+                                                    </select>
+                                                </div>
+
                                                 <div class="mt-4 flex justify-end gap-x-3">
                                                     <button type="button" class="btn btn-ghost" onclick="edit_modal{{ $admin->id }}.close()">Cancel</button>
                                                     <button type="submit" class="btn bg-blue-500 text-white hover:bg-blue-600">Update Admin</button>
@@ -173,7 +165,6 @@
                         @endforeach
                     </tbody>
                 </table>
-            @endif
         </div>
     </div>
 </div>

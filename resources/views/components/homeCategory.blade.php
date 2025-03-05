@@ -17,7 +17,7 @@
     <div class="mx-auto max-w-3xl grid grid-cols-12 gap-6 lg:gap-8">
       <!-- Icon Block -->
       <div class="md:col-span-4 col-span-6 text-center">
-        <img src="/noodle.png" alt="Noodle image" class="mx-auto h-auto w-7 md:w-14 text-gray-600 hover:scale-105 transition-transform duration-300 ease-in-out">
+        <img src="https://images.pexels.com/photos/2098085/pexels-photo-2098085.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1" alt="Asian Cuisine" class="mx-auto h-auto w-24 rounded-lg md:w-32 text-gray-600 hover:scale-105 transition-transform duration-300 ease-in-out">
         <div class="sm:mt-6">
           <h3 class="text-md  md:text-lg font-semibold text-gray-600">
             Asian Cuisine
@@ -28,7 +28,7 @@
   
       <!-- Icon Block -->
       <div class="md:col-span-4   col-span-6 text-center">
-        <img src="/spaghetti.png" alt="spaghetti image" class="mx-auto h-auto w-7 md:w-14 text-gray-600 hover:scale-105 transition-transform duration-300 ease-in-out">
+        <img src="https://cdn.pixabay.com/photo/2018/07/18/19/12/pasta-3547078_1280.jpg" alt="European Cuisine" class="mx-auto h-auto w-24 rounded-lg md:w-32 text-gray-600 hover:scale-105 transition-transform duration-300 ease-in-out">
         <div class=" sm:mt-6">
           <h3 class="text-md md:text-lg font-semibold text-gray-600">
             European Cuisine
@@ -39,7 +39,7 @@
   
       <!-- Icon Block -->
       <div class="md:col-span-4 col-span-6 text-center">
-        <img src="/bbq.png" alt="bbq image" class="mx-auto h-auto w-7 md:w-14 text-gray-600 hover:scale-105 transition-transform duration-300 ease-in-out">
+        <img src="https://cdn.pixabay.com/photo/2021/01/16/09/05/meal-5921491_960_720.jpg" alt="African Cuisine" class="mx-auto h-auto w-24 rounded-lg md:w-32 text-gray-600 hover:scale-105 transition-transform duration-300 ease-in-out">
         <div class=" sm:mt-6">
           <h3 class="text-md md:text-lg font-semibold text-gray-600">
             African Cuisine
@@ -51,7 +51,7 @@
           
       <!-- Icon Block -->
       <div class="md:col-span-4  col-span-6 text-center">
-        <img src="/burger.png" alt="burger image" class="mx-auto h-auto w-7 md:w-14 text-gray-600 hover:scale-105 transition-transform duration-300 ease-in-out">
+        <img src="https://cdn.pixabay.com/photo/2020/10/05/19/55/hamburger-5630646_960_720.jpg" alt="American Cuisine" class="mx-auto h-auto w-24 rounded-lg md:w-32 text-gray-600 hover:scale-105 transition-transform duration-300 ease-in-out">
             <div class=" sm:mt-6">
               <h3 class="text-md md:text-lg font-semibold text-gray-600">
                 American Cuisine
@@ -63,7 +63,7 @@
   
         <!-- Icon Block -->
       <div class="md:col-span-4 col-span-6 text-center">
-        <img src="/massaman-curry.png" alt="massaman-curry image" class="mx-auto h-auto w-7 md:w-14 text-gray-600 hover:scale-105 transition-transform duration-300 ease-in-out">
+        <img src="https://cdn.pixabay.com/photo/2022/03/11/10/06/wrap-7061741_960_720.jpg" alt="Middle Eastern Cuisine" class="mx-auto h-auto w-24 rounded-lg md:w-32 text-gray-600 hover:scale-105 transition-transform duration-300 ease-in-out">
         <div class=" sm:mt-6">
           <h3 class="text-md md:text-lg font-semibold text-gray-600">
             Middle Eastern Cuisine
@@ -74,7 +74,7 @@
   
        <!-- Icon Block -->
        <div class="md:col-span-4  col-span-6 text-center">
-        <img src="/fish.png" alt="fish image" class="mx-auto h-auto w-7 md:w-14 text-gray-600 hover:scale-105 transition-transform duration-300 ease-in-out">
+        <img src="https://cdn.pixabay.com/photo/2016/01/22/02/13/meat-1155132_1280.jpg" alt="Oceanian Cuisine" class="mx-auto h-auto w-24 rounded-lg md:w-32 text-gray-600 hover:scale-105 transition-transform duration-300 ease-in-out">
             <div class=" sm:mt-6">
               <h3 class="text-md md:text-lg font-semibold text-gray-600">
                 Oceanian Cuisine

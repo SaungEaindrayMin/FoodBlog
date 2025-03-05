@@ -198,7 +198,7 @@
       </a>
       <p class="text-gray-600">{{ $receipe->paragraph }}</p>
 
-      <!-- Ingredients Section -->
+      {{-- <!-- Ingredients Section -->
       <div class="mt-4">
         <h2 class="font-semibold text-lg mb-2">Ingredients:</h2>
         <ul class="list-disc list-inside space-y-1">
@@ -216,7 +216,7 @@
             <li class="text-gray-700">{{ $instruction }}</li>
           @endforeach
         </ol>
-      </div>
+      </div> --}}
 
       <!-- Media Section -->
       <div class="flex gap-2 mx-auto mt-4">
